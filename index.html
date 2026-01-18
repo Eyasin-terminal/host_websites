@@ -303,9 +303,9 @@
     </section>
 
     <!-- Projects Section -->
-   <section id="projects" class="py-24 bg-white relative">
+    <section id="projects" class="py-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Section Header (Styled to match previous sections) -->
+            <!-- Section Header -->
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 border-b border-slate-200 pb-6">
                 <div>
                     <h2 class="text-xs font-bold tracking-[0.2em] text-brand-600 uppercase mb-4 flex items-center">
@@ -313,108 +313,109 @@
                     </h2>
                     <h3 class="text-4xl md:text-5xl font-bold text-slate-900 font-serif">Case Studies</h3>
                 </div>
-                <!-- Removed text line here -->
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
                 
-                <!-- Card 1 (Real Data - Updated) -->
-                <div class="project-card group relative bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden flex flex-col hover:shadow-2xl transition-all duration-300">
-                    <!-- Image Holder -->
-                   <div class="h-64 bg-slate-100 relative overflow-hidden group-hover:bg-slate-200 transition-colors">
-                        <!-- Image with Fallback -->
-                        <img src="projectimage1.png" 
-                             alt="Data Integrity Audit Dashboard" 
-                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                             onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden'); this.nextElementSibling.classList.add('flex');">
-                        
-                        <!-- Fallback SVG (Hidden by default) -->
-                        <div class="absolute inset-0 flex-col items-center justify-center text-slate-400 hidden bg-slate-100">
-                            <i class="fas fa-database text-5xl mb-4 group-hover:scale-110 transition-transform duration-500"></i>
-                            <span class="text-xs uppercase tracking-widest font-semibold">Data Audit</span>
+                <!-- Card 1 (Real Data - Typographic Style) -->
+                <div class="project-card group relative bg-slate-50 rounded-xl shadow-sm border border-slate-100 overflow-hidden flex flex-col hover:shadow-lg hover:border-brand-100 transition-all duration-300">
+                    <div class="p-8 md:p-10 flex flex-col h-full">
+                        <!-- Category Tag -->
+                        <div class="flex items-center mb-4 text-brand-600">
+                            <i class="fas fa-database text-sm mr-2"></i>
+                            <span class="text-xs font-bold uppercase tracking-widest">GameZone Global</span>
                         </div>
 
-                        <!-- Hover Overlay Button -->
-                        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center see-more-btn">
-                            <button onclick="toggleCard(this)" class="bg-white text-slate-900 px-8 py-3 rounded-full font-medium hover:bg-brand-50 transition-colors shadow-xl">
-                                See More
+                        <!-- Headline -->
+                        <h3 class="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-6 leading-tight group-hover:text-brand-700 transition-colors">
+                            Data Integrity & Supply Chain Audit
+                        </h3>
+
+                        <!-- Toggle Button -->
+                        <div class="mt-auto">
+                            <button onclick="toggleCard(this)" class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-brand-600 transition-colors border-b border-transparent hover:border-brand-600 pb-1">
+                                See Details <i class="fas fa-chevron-down ml-2"></i>
                             </button>
                         </div>
-                    </div>
 
-                    <!-- Content -->
-                    <div class="p-8 flex-grow flex flex-col">
-                        <h3 class="text-xl font-serif font-bold text-slate-900 mb-3 leading-tight">Data Integrity & Supply Chain Audit</h3>
-                        <p class="text-xs font-bold text-brand-600 uppercase tracking-wide mb-4">GameZone Global</p>
-                        
                         <!-- Collapsible Details -->
-                        <div class="details-panel mt-auto">
-                            <div class="pt-6 border-t border-slate-100 mt-2">
+                        <div class="details-panel">
+                            <div class="pt-6 border-t border-slate-200 mt-6">
                                 <p class="text-slate-600 mb-6 leading-relaxed font-light">
                                     To perform a rigorous Data Cleaning & Logic Audit to produce a "Golden Dataset." My goal was not just to fix errors, but to create a reliable foundation that allows the next analyst to answer executive questions with confidence.
                                 </p>
-                                <a href="https://github.com/Eyasin-terminal/2026-Project-Data_Cleanign_GameZone-Class_B" target="_blank" class="inline-flex items-center text-slate-900 font-bold border-b-2 border-brand-400 hover:border-brand-600 hover:text-brand-700 transition-colors pb-1">
-                                    View Full Case Study <i class="fab fa-github ml-2 text-sm"></i>
+                                <a href="https://github.com/Eyasin-terminal/2026-Project-Data_Cleanign_GameZone-Class_B" target="_blank" class="inline-flex items-center text-slate-900 font-bold border-b-2 border-brand-400 hover:border-brand-600 hover:text-brand-700 transition-colors pb-1 text-sm">
+                                    View Full Case Study <i class="fab fa-github ml-2"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 2 (Placeholder) -->
-                <div class="project-card group relative bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden flex flex-col hover:shadow-2xl transition-all duration-300">
-                    <div class="h-64 bg-slate-100 relative overflow-hidden group-hover:bg-slate-200 transition-colors">
-                        <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-400">
-                            <i class="fas fa-chart-pie text-5xl mb-4 group-hover:scale-110 transition-transform duration-500"></i>
-                            <span class="text-xs uppercase tracking-widest font-semibold">Optimization</span>
+                <!-- Card 2 (Placeholder - Typographic Style) -->
+                <div class="project-card group relative bg-slate-50 rounded-xl shadow-sm border border-slate-100 overflow-hidden flex flex-col hover:shadow-lg hover:border-brand-100 transition-all duration-300">
+                    <div class="p-8 md:p-10 flex flex-col h-full">
+                        <!-- Category Tag -->
+                        <div class="flex items-center mb-4 text-brand-600">
+                            <i class="fas fa-chart-pie text-sm mr-2"></i>
+                            <span class="text-xs font-bold uppercase tracking-widest">Retail Client</span>
                         </div>
-                        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center see-more-btn">
-                            <button onclick="toggleCard(this)" class="bg-white text-slate-900 px-8 py-3 rounded-full font-medium hover:bg-brand-50 transition-colors shadow-xl">
-                                See More
+
+                        <!-- Headline -->
+                        <h3 class="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-6 leading-tight group-hover:text-brand-700 transition-colors">
+                            Sales Funnel Optimization
+                        </h3>
+
+                        <!-- Toggle Button -->
+                        <div class="mt-auto">
+                            <button onclick="toggleCard(this)" class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-brand-600 transition-colors border-b border-transparent hover:border-brand-600 pb-1">
+                                See Details <i class="fas fa-chevron-down ml-2"></i>
                             </button>
                         </div>
-                    </div>
-                    <div class="p-8 flex-grow flex flex-col">
-                        <h3 class="text-xl font-serif font-bold text-slate-900 mb-3 leading-tight">Sales Funnel Optimization</h3>
-                        <p class="text-xs font-bold text-brand-600 uppercase tracking-wide mb-4">Retail Client</p>
-                        
-                        <div class="details-panel mt-auto">
-                            <div class="pt-6 border-t border-slate-100 mt-2">
+
+                        <!-- Collapsible Details -->
+                        <div class="details-panel">
+                            <div class="pt-6 border-t border-slate-200 mt-6">
                                 <p class="text-slate-600 mb-6 leading-relaxed font-light">
                                     Analyzed drop-off points in the sales funnel to identify operational friction. Implemented tracking dashboards that recovered 15% of lost leads within the first quarter.
                                 </p>
-                                <a href="#" class="inline-flex items-center text-slate-900 font-bold border-b-2 border-brand-400 hover:border-brand-600 hover:text-brand-700 transition-colors pb-1">
-                                    View Full Case Study <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                                <a href="#" class="inline-flex items-center text-slate-900 font-bold border-b-2 border-brand-400 hover:border-brand-600 hover:text-brand-700 transition-colors pb-1 text-sm">
+                                    View Full Case Study <i class="fas fa-arrow-right ml-2"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 3 (Placeholder) -->
-                <div class="project-card group relative bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden flex flex-col hover:shadow-2xl transition-all duration-300">
-                    <div class="h-64 bg-slate-100 relative overflow-hidden group-hover:bg-slate-200 transition-colors">
-                        <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-400">
-                            <i class="fas fa-project-diagram text-5xl mb-4 group-hover:scale-110 transition-transform duration-500"></i>
-                            <span class="text-xs uppercase tracking-widest font-semibold">Forecasting</span>
+                <!-- Card 3 (Placeholder - Typographic Style) -->
+                <div class="project-card group relative bg-slate-50 rounded-xl shadow-sm border border-slate-100 overflow-hidden flex flex-col hover:shadow-lg hover:border-brand-100 transition-all duration-300">
+                    <div class="p-8 md:p-10 flex flex-col h-full">
+                        <!-- Category Tag -->
+                        <div class="flex items-center mb-4 text-brand-600">
+                            <i class="fas fa-project-diagram text-sm mr-2"></i>
+                            <span class="text-xs font-bold uppercase tracking-widest">SaaS Product</span>
                         </div>
-                        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center see-more-btn">
-                            <button onclick="toggleCard(this)" class="bg-white text-slate-900 px-8 py-3 rounded-full font-medium hover:bg-brand-50 transition-colors shadow-xl">
-                                See More
+
+                        <!-- Headline -->
+                        <h3 class="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-6 leading-tight group-hover:text-brand-700 transition-colors">
+                            Market Segmentation Strategy
+                        </h3>
+
+                        <!-- Toggle Button -->
+                        <div class="mt-auto">
+                            <button onclick="toggleCard(this)" class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-brand-600 transition-colors border-b border-transparent hover:border-brand-600 pb-1">
+                                See Details <i class="fas fa-chevron-down ml-2"></i>
                             </button>
                         </div>
-                    </div>
-                    <div class="p-8 flex-grow flex flex-col">
-                        <h3 class="text-xl font-serif font-bold text-slate-900 mb-3 leading-tight">Market Segmentation</h3>
-                        <p class="text-xs font-bold text-brand-600 uppercase tracking-wide mb-4">SaaS Product</p>
-                        
-                        <div class="details-panel mt-auto">
-                            <div class="pt-6 border-t border-slate-100 mt-2">
+
+                        <!-- Collapsible Details -->
+                        <div class="details-panel">
+                            <div class="pt-6 border-t border-slate-200 mt-6">
                                 <p class="text-slate-600 mb-6 leading-relaxed font-light">
                                     Developed a segmentation model using Python and SQL to categorize customer behavior. Improved marketing targeting efficiency and reduced ad spend waste.
                                 </p>
-                                <a href="#" class="inline-flex items-center text-slate-900 font-bold border-b-2 border-brand-400 hover:border-brand-600 hover:text-brand-700 transition-colors pb-1">
-                                    View Full Case Study <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                                <a href="#" class="inline-flex items-center text-slate-900 font-bold border-b-2 border-brand-400 hover:border-brand-600 hover:text-brand-700 transition-colors pb-1 text-sm">
+                                    View Full Case Study <i class="fas fa-arrow-right ml-2"></i>
                                 </a>
                             </div>
                         </div>
