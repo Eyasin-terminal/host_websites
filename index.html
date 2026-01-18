@@ -7,7 +7,7 @@
     <meta name="description" content="Portfolio of Eyasin Arafath, BI Analyst and Economics Student bridging the gap between Sales and Marketing.">
     <!-- Facebook / Open Graph Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://your-portfolio-link.com/"> <!-- REPLACE with your actual live link later -->
+    <meta property="og:url" content="https://your-portfolio-link.com/"> 
     <meta property="og:title" content="Eyasin Arafath | BI Analyst Portfolio">
     <meta property="og:description" content="I bridge the gap between Sales and Marketing. I use data analysis to fix operational friction so you stop losing leads.">
     <meta property="og:image" content="og-banner.png">
@@ -58,34 +58,7 @@
     <style>
         /* Custom Styles for interactions */
         .project-card .details-panel {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
-            opacity: 0;
-        }
-
-        .project-card.active .details-panel {
-            max-height: 300px; /* Arbitrary large height */
-            opacity: 1;
-        }
-
-        .project-card .see-more-btn {
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
-        }
-
-        .project-card:hover .see-more-btn {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Mobile optimization */
-        @media (hover: none) {
-            .project-card .see-more-btn {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            /* Basic setup handled by Tailwind */
         }
 
         /* Editorial Grain Texture */
@@ -93,6 +66,16 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E");
             opacity: 0.4;
             mix-blend-mode: overlay;
+        }
+        
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .scrollbar-hide {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
         }
     </style>
 </head>
@@ -133,9 +116,7 @@
                 <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">About Me</a>
                 <a href="#work" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Work</a>
                 <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Projects</a>
-                <!-- ADD THIS LINE BELOW -->
                 <a href="articles.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Articles</a>
-                <!-- END ADDITION -->
                 <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Contact</a>
             </div>
         </div>
@@ -311,7 +292,7 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
+ <!-- Projects Section -->
     <section id="projects" class="py-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
@@ -322,118 +303,158 @@
                     </h2>
                     <h3 class="text-4xl md:text-5xl font-bold text-slate-900 font-serif">Case Studies</h3>
                 </div>
+                <!-- Scroll Hint for Desktop -->
+                <div class="hidden md:flex text-slate-400 text-sm items-center gap-2 animate-pulse">
+                    <span>Scroll</span> <i class="fas fa-arrow-right"></i>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                
-                <!-- Card 1 (Real Data - Typographic Style) -->
-                <div class="project-card group relative bg-slate-50 rounded-xl shadow-sm border border-slate-100 overflow-hidden flex flex-col hover:shadow-lg hover:border-brand-100 transition-all duration-300">
-                    <div class="p-8 md:p-10 flex flex-col h-full">
-                        <!-- Category Tag -->
-                        <div class="flex items-center mb-4 text-brand-600">
-                            <i class="fas fa-database text-sm mr-2"></i>
-                            <span class="text-xs font-bold uppercase tracking-widest">GameZone Global</span>
+
+            <!-- Square Carousel Container -->
+            <!-- Added ID for JavaScript -->
+            <div id="carousel-container" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-12 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide items-stretch">
+               
+                <!-- Card 1: GameZone Global -->
+                <div class="project-card w-80 md:w-96 aspect-square snap-center flex-shrink-0 group relative bg-slate-50 rounded-2xl shadow-sm border border-slate-100 overflow-hidden flex flex-col hover:shadow-xl hover:border-brand-200 hover:-translate-y-2 transition-all duration-300">
+                    <div class="p-8 flex flex-col h-full justify-between relative z-10">
+                        <!-- Top Tag -->
+                        <div class="flex justify-between items-start">
+                            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-600 border border-brand-100 bg-white px-3 py-1 rounded-full">
+                                Audit
+                            </span>
+                            <i class="fas fa-database text-slate-300 text-xl group-hover:text-brand-400 transition-colors"></i>
                         </div>
 
-                        <!-- Headline -->
-                        <h3 class="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-6 leading-tight group-hover:text-brand-700 transition-colors">
-                            Data Integrity & Supply Chain Audit
-                        </h3>
 
-                        <!-- Toggle Button -->
-                        <div class="mt-auto">
-                            <button onclick="toggleCard(this)" class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-brand-600 transition-colors border-b border-transparent hover:border-brand-600 pb-1">
-                                See Details <i class="fas fa-chevron-down ml-2"></i>
+                        <!-- Center Headline -->
+                        <div class="my-auto">
+                            <h3 class="text-2xl md:text-3xl font-serif font-bold text-slate-900 leading-tight group-hover:text-brand-800 transition-colors">
+                                Data Integrity & Supply Chain Audit
+                            </h3>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-3">GameZone Global</p>
+                        </div>
+
+
+                        <!-- Bottom Action -->
+                        <div>
+                            <button onclick="toggleCard(this)" class="cursor-pointer group/btn inline-flex items-center text-xs font-bold uppercase tracking-widest text-slate-900 border-b-2 border-slate-200 hover:border-brand-600 pb-1 transition-all">
+                                View Details <i class="fas fa-chevron-right ml-2 group-hover/btn:translate-x-1 transition-transform"></i>
                             </button>
                         </div>
+                    </div>
 
-                        <!-- Collapsible Details -->
-                        <div class="details-panel">
-                            <div class="pt-6 border-t border-slate-200 mt-6">
-                                <p class="text-slate-600 mb-6 leading-relaxed font-light">
-                                    To perform a rigorous Data Cleaning & Logic Audit to produce a "Golden Dataset." My goal was not just to fix errors, but to create a reliable foundation that allows the next analyst to answer executive questions with confidence.
-                                </p>
-                                <a href="https://github.com/Eyasin-terminal/2026-Project-Data_Cleanign_GameZone-Class_B" target="_blank" class="inline-flex items-center text-slate-900 font-bold border-b-2 border-brand-400 hover:border-brand-600 hover:text-brand-700 transition-colors pb-1 text-sm">
-                                    View Full Case Study <i class="fab fa-github ml-2"></i>
-                                </a>
-                            </div>
-                        </div>
+
+                    <!-- Collapsible Overlay (Slide Up Effect) -->
+                    <!-- Added transform class explicitly -->
+                    <div class="details-panel transform translate-y-full absolute inset-0 z-20 bg-slate-900/95 text-white p-8 flex flex-col justify-center transition-transform duration-500 ease-in-out">
+                        <button onclick="toggleCard(this)" class="absolute top-6 right-6 text-slate-400 hover:text-white transition-colors cursor-pointer">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                        <h4 class="text-lg font-serif font-bold mb-4 text-brand-400">Project Overview</h4>
+                        <p class="text-sm text-slate-300 leading-relaxed mb-8 font-light">
+                            Performed a rigorous Data Cleaning & Logic Audit to produce a "Golden Dataset." Created a reliable foundation allowing analysts to answer executive questions with confidence.
+                        </p>
+                        <a href="https://github.com/Eyasin-terminal/2026-Project-Data_Cleanign_GameZone-Class_B" target="_blank" class="w-full text-center bg-white text-slate-900 font-bold uppercase tracking-widest text-xs py-4 rounded hover:bg-brand-50 transition-colors">
+                            View on GitHub
+                        </a>
                     </div>
                 </div>
 
-                <!-- Card 2 (Placeholder - Typographic Style) -->
-                <div class="project-card group relative bg-slate-50 rounded-xl shadow-sm border border-slate-100 overflow-hidden flex flex-col hover:shadow-lg hover:border-brand-100 transition-all duration-300">
-                    <div class="p-8 md:p-10 flex flex-col h-full">
-                        <!-- Category Tag -->
-                        <div class="flex items-center mb-4 text-brand-600">
-                            <i class="fas fa-chart-pie text-sm mr-2"></i>
-                            <span class="text-xs font-bold uppercase tracking-widest">Project Coming Soon!</span>
+
+                <!-- Card 2: Sales Optimization -->
+                <div class="project-card w-80 md:w-96 aspect-square snap-center flex-shrink-0 group relative bg-slate-50 rounded-2xl shadow-sm border border-slate-100 overflow-hidden flex flex-col hover:shadow-xl hover:border-brand-200 hover:-translate-y-2 transition-all duration-300">
+                    <div class="p-8 flex flex-col h-full justify-between relative z-10">
+                        <div class="flex justify-between items-start">
+                            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-600 border border-brand-100 bg-white px-3 py-1 rounded-full">
+                                Analysis
+                            </span>
+                            <i class="fas fa-chart-pie text-slate-300 text-xl group-hover:text-brand-400 transition-colors"></i>
                         </div>
 
-                        <!-- Headline -->
-                        <h3 class="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-6 leading-tight group-hover:text-brand-700 transition-colors">
-                            Project Coming Soon!
-                        </h3>
 
-                        <!-- Toggle Button -->
-                        <div class="mt-auto">
-                            <button onclick="toggleCard(this)" class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-brand-600 transition-colors border-b border-transparent hover:border-brand-600 pb-1">
-                                See Details <i class="fas fa-chevron-down ml-2"></i>
+                        <div class="my-auto">
+                            <h3 class="text-2xl md:text-3xl font-serif font-bold text-slate-900 leading-tight group-hover:text-brand-800 transition-colors">
+                                Sales Funnel Optimization
+                            </h3>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-3">Retail Client</p>
+                        </div>
+
+
+                        <div>
+                            <button onclick="toggleCard(this)" class="cursor-pointer group/btn inline-flex items-center text-xs font-bold uppercase tracking-widest text-slate-900 border-b-2 border-slate-200 hover:border-brand-600 pb-1 transition-all">
+                                View Details <i class="fas fa-chevron-right ml-2 group-hover/btn:translate-x-1 transition-transform"></i>
                             </button>
                         </div>
+                    </div>
 
-                        <!-- Collapsible Details -->
-                        <div class="details-panel">
-                            <div class="pt-6 border-t border-slate-200 mt-6">
-                                <p class="text-slate-600 mb-6 leading-relaxed font-light">
-                                    Project Coming Soon!.
-                                </p>
-                                <a href="https://github.com/Eyasin-terminal/2026-Project-Data_Cleanign_GameZone-Class_B" class="inline-flex items-center text-slate-900 font-bold border-b-2 border-brand-400 hover:border-brand-600 hover:text-brand-700 transition-colors pb-1 text-sm">
-                                    View Full Case Study <i class="fas fa-arrow-right ml-2"></i>
-                                </a>
-                            </div>
-                        </div>
+
+                    <div class="details-panel transform translate-y-full absolute inset-0 z-20 bg-slate-900/95 text-white p-8 flex flex-col justify-center transition-transform duration-500 ease-in-out">
+                        <button onclick="toggleCard(this)" class="absolute top-6 right-6 text-slate-400 hover:text-white transition-colors cursor-pointer">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                        <h4 class="text-lg font-serif font-bold mb-4 text-brand-400">Project Overview</h4>
+                        <p class="text-sm text-slate-300 leading-relaxed mb-8 font-light">
+                            Analyzed drop-off points in the sales funnel to identify operational friction. Implemented tracking dashboards that recovered 15% of lost leads within the first quarter.
+                        </p>
+                        <a href="#" class="w-full text-center bg-white text-slate-900 font-bold uppercase tracking-widest text-xs py-4 rounded hover:bg-brand-50 transition-colors">
+                            View Case Study
+                        </a>
                     </div>
                 </div>
 
-                <!-- Card 3 (Placeholder - Typographic Style) -->
-                <div class="project-card group relative bg-slate-50 rounded-xl shadow-sm border border-slate-100 overflow-hidden flex flex-col hover:shadow-lg hover:border-brand-100 transition-all duration-300">
-                    <div class="p-8 md:p-10 flex flex-col h-full">
-                        <!-- Category Tag -->
-                        <div class="flex items-center mb-4 text-brand-600">
-                            <i class="fas fa-project-diagram text-sm mr-2"></i>
-                            <span class="text-xs font-bold uppercase tracking-widest">Project Coming Soon!</span>
+
+                <!-- Card 3: Segmentation -->
+                <div class="project-card w-80 md:w-96 aspect-square snap-center flex-shrink-0 group relative bg-slate-50 rounded-2xl shadow-sm border border-slate-100 overflow-hidden flex flex-col hover:shadow-xl hover:border-brand-200 hover:-translate-y-2 transition-all duration-300">
+                    <div class="p-8 flex flex-col h-full justify-between relative z-10">
+                        <div class="flex justify-between items-start">
+                            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-600 border border-brand-100 bg-white px-3 py-1 rounded-full">
+                                Python
+                            </span>
+                            <i class="fas fa-code text-slate-300 text-xl group-hover:text-brand-400 transition-colors"></i>
                         </div>
 
-                        <!-- Headline -->
-                        <h3 class="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-6 leading-tight group-hover:text-brand-700 transition-colors">
-                            Project Coming Soon!
-                        </h3>
 
-                        <!-- Toggle Button -->
-                        <div class="mt-auto">
-                            <button onclick="toggleCard(this)" class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-brand-600 transition-colors border-b border-transparent hover:border-brand-600 pb-1">
-                                See Details <i class="fas fa-chevron-down ml-2"></i>
+                        <div class="my-auto">
+                            <h3 class="text-2xl md:text-3xl font-serif font-bold text-slate-900 leading-tight group-hover:text-brand-800 transition-colors">
+                                Market Segmentation Model
+                            </h3>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-3">SaaS Product</p>
+                        </div>
+
+
+                        <div>
+                            <button onclick="toggleCard(this)" class="cursor-pointer group/btn inline-flex items-center text-xs font-bold uppercase tracking-widest text-slate-900 border-b-2 border-slate-200 hover:border-brand-600 pb-1 transition-all">
+                                View Details <i class="fas fa-chevron-right ml-2 group-hover/btn:translate-x-1 transition-transform"></i>
                             </button>
                         </div>
+                    </div>
 
-                        <!-- Collapsible Details -->
-                        <div class="details-panel">
-                            <div class="pt-6 border-t border-slate-200 mt-6">
-                                <p class="text-slate-600 mb-6 leading-relaxed font-light">
-                                    Project Coming Soon!.
-                                </p>
-                                <a href="https://github.com/Eyasin-terminal/2026-Project-Data_Cleanign_GameZone-Class_B" class="inline-flex items-center text-slate-900 font-bold border-b-2 border-brand-400 hover:border-brand-600 hover:text-brand-700 transition-colors pb-1 text-sm">
-                                    View Full Case Study <i class="fas fa-arrow-right ml-2"></i>
-                                </a>
-                            </div>
-                        </div>
+
+                    <div class="details-panel transform translate-y-full absolute inset-0 z-20 bg-slate-900/95 text-white p-8 flex flex-col justify-center transition-transform duration-500 ease-in-out">
+                        <button onclick="toggleCard(this)" class="absolute top-6 right-6 text-slate-400 hover:text-white transition-colors cursor-pointer">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                        <h4 class="text-lg font-serif font-bold mb-4 text-brand-400">Project Overview</h4>
+                        <p class="text-sm text-slate-300 leading-relaxed mb-8 font-light">
+                            Developed a segmentation model using Python and SQL to categorize customer behavior. Improved marketing targeting efficiency and reduced ad spend waste.
+                        </p>
+                        <a href="#" class="w-full text-center bg-white text-slate-900 font-bold uppercase tracking-widest text-xs py-4 rounded hover:bg-brand-50 transition-colors">
+                            View Case Study
+                        </a>
                     </div>
                 </div>
 
+            </div>
+            
+            <!-- Carousel Dots -->
+            <div class="flex justify-center gap-3 mt-6">
+                <div class="carousel-dot w-2 h-2 rounded-full bg-slate-800 transition-all duration-300 w-4"></div>
+                <div class="carousel-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300"></div>
+                <div class="carousel-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300"></div>
             </div>
         </div>
     </section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="py-24 bg-slate-50 relative">
@@ -544,29 +565,68 @@
         });
 
         // Project Card Toggle Function
-        function toggleCard(button) {
-            // Find the parent card of the clicked button
-            const card = button.closest('.project-card');
+        window.toggleCard = function(element) {
+            console.log("Toggle card clicked", element);
+            // Find the parent card
+            const card = element.closest('.project-card');
+            if (!card) return;
             
-            // Toggle active class
-            const isActive = card.classList.contains('active');
+            const panel = card.querySelector('.details-panel');
+            if (!panel) return;
             
-            // Close all other cards first
-            document.querySelectorAll('.project-card').forEach(c => {
-                c.classList.remove('active');
-                const btnText = c.querySelector('button');
-                if(btnText) btnText.innerHTML = 'See More';
+            // Check if panel is currently open (translated to 0)
+            const isOpen = panel.classList.contains('translate-y-0');
+            
+            // Close all other panels first
+            document.querySelectorAll('.details-panel').forEach(p => {
+                p.classList.remove('translate-y-0');
+                p.classList.add('translate-y-full');
             });
 
-            if (!isActive) {
-                card.classList.add('active');
-                button.innerHTML = 'Close';
-            } else {
-                card.classList.remove('active');
-                button.innerHTML = 'See More';
-            }
-        }
+            if (!isOpen) {
+                // Open this panel
+                panel.classList.remove('translate-y-full');
+                panel.classList.add('translate-y-0');
+            } 
+            // If it was open, the loop above already closed it
+        };
         
+        // Carousel Dots Logic (New Addition)
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('carousel-container');
+            if (!container) return; // Exit if element not found
+            
+            const cards = container.querySelectorAll('.project-card');
+            const dots = document.querySelectorAll('.carousel-dot');
+            
+            if (cards.length === 0 || dots.length === 0) return;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Find index of the intersecting card
+                        const index = Array.from(cards).indexOf(entry.target);
+                        
+                        // Update dots
+                        dots.forEach((dot, i) => {
+                            if (i === index) {
+                                dot.classList.remove('bg-slate-300');
+                                dot.classList.add('bg-slate-800', 'w-4'); // Active state: darker & wider
+                            } else {
+                                dot.classList.add('bg-slate-300');
+                                dot.classList.remove('bg-slate-800', 'w-4');
+                            }
+                        });
+                    }
+                });
+            }, {
+                root: container,
+                threshold: 0.6 // Trigger when card is 60% visible
+            });
+
+            cards.forEach(card => observer.observe(card));
+        });
+
         // Add fade-in animation to styles dynamically
         const styleSheet = document.createElement("style");
         styleSheet.innerText = `
