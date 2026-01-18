@@ -188,129 +188,152 @@
     <!-- About Me Section -->
     <section id="about" class="py-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-slate-200 pb-6">
-                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 font-serif">About Me</h2>
-                <p class="text-slate-500 mt-4 md:mt-0 font-sans text-sm tracking-wider uppercase">Bridging Strategy & Data</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12 items-start">
-                <!-- Professional Summary -->
-                <div class="bg-slate-50 p-10 rounded-xl border border-slate-100 hover:border-brand-100 transition-colors">
-                    <div class="text-brand-600 mb-6 text-4xl opacity-80">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="text-2xl font-serif font-bold text-slate-900 mb-4">The Bridge</h3>
-                    <p class="text-lg text-slate-600 leading-relaxed font-light">
-                        "I bridge the gap between <strong class="text-slate-900 font-medium">Sales</strong> and <strong class="text-slate-900 font-medium">Marketing</strong>. I use data analysis to fix operational friction so you stop losing leads."
-                    </p>
-                    <p class="mt-4 text-slate-600">My approach combines technical analysis with business acumen to drive measurable growth.</p>
+            <!-- Grid Layout for Editorial Look -->
+            <div class="grid md:grid-cols-12 gap-12 items-start">
+                
+                <!-- Left Column: The Hook / Main Statement -->
+                <div class="md:col-span-5 relative">
+                    <h2 class="text-xs font-bold tracking-[0.2em] text-brand-600 uppercase mb-6 flex items-center">
+                        <span class="w-8 h-[1px] bg-brand-600 mr-3"></span> About Me
+                    </h2>
+                    <blockquote class="text-4xl md:text-5xl font-serif text-slate-900 leading-[1.15] font-medium">
+                        "I bridge the gap between <span class="italic text-brand-700 font-serif">Sales</span> and <span class="italic text-brand-700 font-serif">Marketing</span>."
+                    </blockquote>
+                    <div class="hidden md:block absolute -right-6 top-0 w-[1px] h-full bg-slate-100"></div>
                 </div>
 
-                <!-- Education -->
-                <div class="bg-slate-50 p-10 rounded-xl border border-slate-100 hover:border-brand-100 transition-colors">
-                    <div class="text-brand-600 mb-6 text-4xl opacity-80">
-                        <i class="fas fa-graduation-cap"></i>
+                <!-- Right Column: Detail & Education -->
+                <div class="md:col-span-7 space-y-12 pt-2 md:pl-8">
+                    <!-- Text Block -->
+                    <div>
+                        <p class="text-xl text-slate-600 font-light leading-relaxed mb-6">
+                            I use data analysis to fix operational friction so you stop losing leads.
+                        </p>
+                        <p class="text-base text-slate-500 leading-relaxed max-w-2xl">
+                            In a world where data is abundant but insights are scarce, my goal is to translate complex metrics into actionable business strategies. My approach combines technical analysis with business acumen to drive measurable growth.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-serif font-bold text-slate-900 mb-4">Education</h3>
-                    <div class="space-y-3">
-                        <p class="font-bold text-slate-900 text-xl font-serif">BSS (Hon’s) in Economics</p>
-                        <p class="text-slate-700 font-medium">Bangladesh University of Professionals</p>
-                        <div class="flex flex-wrap items-center gap-3 text-sm text-slate-500 mt-4 pt-4 border-t border-slate-200">
-                            <span class="bg-white border border-slate-200 px-3 py-1 rounded-full">8th Semester</span>
-                            <span>Expected Graduation: July, 2026</span>
+
+                    <!-- Education Block - Minimalist Editorial Style -->
+                    <div class="relative">
+                        <h3 class="text-xs font-bold tracking-[0.2em] text-slate-400 uppercase mb-6 border-b border-slate-100 pb-2 inline-block">
+                            Education
+                        </h3>
+                        
+                        <div class="group">
+                            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
+                                <h4 class="text-2xl font-serif text-slate-900 group-hover:text-brand-700 transition-colors">BSS (Hon’s) in Economics</h4>
+                                <span class="text-sm font-medium text-slate-400 mt-1 sm:mt-0">Graduating July 2026</span>
+                            </div>
+                            <p class="text-lg text-slate-600 mb-3">Bangladesh University of Professionals</p>
+                            
+                            <div class="flex items-center gap-2">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-brand-50 text-brand-700 border border-brand-100">
+                                    8th Semester
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- Work Section -->
-    <section id="work" class="py-24 bg-slate-50">
+    <section id="work" class="py-24 bg-slate-50 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-slate-200 pb-6">
-                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 font-serif">Experience</h2>
-                <p class="text-slate-500 mt-4 md:mt-0 font-sans text-sm tracking-wider uppercase">Professional Timeline</p>
-            </div>
-
-            <div class="max-w-4xl mx-auto">
-                <!-- Job 1 -->
-                <div class="group relative pl-8 md:pl-0 mb-12">
-                    <!-- Desktop Layout: Split -->
-                    <div class="md:grid md:grid-cols-5 md:gap-8 items-start">
-                        <!-- Date -->
-                        <div class="md:col-span-1 md:text-right pt-1">
-                            <p class="text-sm font-bold text-slate-900 uppercase tracking-wide">Nov 2024</p>
-                            <p class="text-xs text-slate-500 uppercase tracking-wide">Present</p>
-                        </div>
-                        
-                        <!-- Timeline Dot/Line -->
-                        <div class="hidden md:flex flex-col items-center relative col-span-1 md:w-8 mx-auto h-full">
-                            <div class="w-3 h-3 bg-brand-600 rounded-full z-10 ring-4 ring-white"></div>
-                            <div class="w-px h-full bg-slate-300 absolute top-3"></div>
-                        </div>
-
-                        <!-- Content -->
-                        <div class="md:col-span-3 relative bg-white p-6 rounded-lg shadow-sm border border-slate-100 transition-transform hover:-translate-y-1 duration-300">
-                            <!-- Mobile Dot (Absolute) -->
-                            <div class="md:hidden absolute -left-[41px] top-6 w-3 h-3 bg-brand-600 rounded-full ring-4 ring-slate-50"></div>
-                            <div class="md:hidden absolute -left-[36px] top-6 w-px h-full bg-slate-200"></div>
-
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-xl font-bold text-slate-900 font-serif">Zariwali</h3>
-                                <span class="bg-brand-50 text-brand-700 text-xs px-2 py-1 rounded border border-brand-100">Current</span>
-                            </div>
-                            <p class="text-brand-700 font-medium mb-2">Co-Founder | Lead, Business Intelligence & Supply Chain</p>
-                            <p class="text-slate-600 text-sm leading-relaxed">Leading data-driven strategies for supply chain optimization and business growth.</p>
-                        </div>
-                    </div>
+             <!-- Editorial Grid Layout matching About Me -->
+            <div class="grid md:grid-cols-12 gap-12 items-start">
+                
+                <!-- Left Column: Sticky Header -->
+                <div class="md:col-span-5 relative md:sticky md:top-32">
+                    <h2 class="text-xs font-bold tracking-[0.2em] text-brand-600 uppercase mb-6 flex items-center">
+                        <span class="w-8 h-[1px] bg-brand-600 mr-3"></span> Experience
+                    </h2>
+                    <h3 class="text-4xl md:text-5xl font-serif text-slate-900 leading-[1.15] font-medium mb-6">
+                        Professional <br /> History
+                    </h3>
+                     <p class="text-slate-500 font-light text-lg max-w-sm leading-relaxed">
+                        A timeline of my work in business intelligence, supply chain, and data analytics.
+                    </p>
+                    <div class="hidden md:block absolute -right-6 top-0 w-[1px] h-full bg-slate-200"></div>
                 </div>
 
-                <!-- Job 2 -->
-                <div class="group relative pl-8 md:pl-0">
-                    <div class="md:grid md:grid-cols-5 md:gap-8 items-start">
-                        <div class="md:col-span-1 md:text-right pt-1">
-                            <p class="text-sm font-bold text-slate-400 uppercase tracking-wide">Nov 2024</p>
-                            <p class="text-xs text-slate-400 uppercase tracking-wide">Aug 2025</p>
+                <!-- Right Column: Timeline Items -->
+                <div class="md:col-span-7 pt-2 md:pl-8 space-y-12">
+                    
+                    <!-- Job 1: Zariwali -->
+                    <div class="group relative pb-12 border-l border-slate-200 pl-8 md:pl-10 last:border-0 last:pb-0">
+                        <!-- Timeline Dot -->
+                        <div class="absolute -left-[5px] top-2 w-[9px] h-[9px] bg-white border-2 border-brand-600 rounded-full group-hover:bg-brand-600 transition-colors duration-300"></div>
+                        
+                        <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                            <h4 class="text-3xl font-serif text-slate-900 group-hover:text-brand-700 transition-colors">Zariwali</h4>
+                            <span class="text-xs font-bold tracking-widest text-brand-600 uppercase mt-2 sm:mt-0 bg-brand-50 px-3 py-1 rounded-full">Nov 2024 - Present</span>
                         </div>
                         
-                        <div class="hidden md:flex flex-col items-center relative col-span-1 md:w-8 mx-auto h-full">
-                            <div class="w-3 h-3 bg-slate-300 rounded-full z-10 ring-4 ring-white"></div>
-                            <!-- No line for last item -->
-                        </div>
-
-                        <div class="md:col-span-3 relative bg-white p-6 rounded-lg shadow-sm border border-slate-100 transition-transform hover:-translate-y-1 duration-300 opacity-90 hover:opacity-100">
-                            <div class="md:hidden absolute -left-[41px] top-6 w-3 h-3 bg-slate-300 rounded-full ring-4 ring-slate-50"></div>
-                            
-                            <h3 class="text-xl font-bold text-slate-900 font-serif mb-1">The Rage House</h3>
-                            <p class="text-brand-700 font-medium mb-2">Former Co-Founder & Lead BI Analyst</p>
-                            <p class="text-slate-600 text-sm leading-relaxed">Spearheaded initial business intelligence frameworks and operational analysis.</p>
-                        </div>
+                        <p class="text-lg font-medium text-slate-700 mb-4">Co-Founder | Lead, Business Intelligence & Supply Chain</p>
+                        
+                        <p class="text-slate-600 font-light leading-relaxed">
+                            Leading data-driven strategies for supply chain optimization and business growth. Focused on reducing operational friction and enhancing decision-making processes through actionable intelligence.
+                        </p>
                     </div>
+
+                    <!-- Job 2: The Rage House -->
+                    <div class="group relative border-l border-slate-200 pl-8 md:pl-10 last:border-0">
+                        <!-- Timeline Dot -->
+                        <div class="absolute -left-[5px] top-2 w-[9px] h-[9px] bg-white border-2 border-slate-400 rounded-full group-hover:border-brand-600 group-hover:bg-brand-600 transition-colors duration-300"></div>
+                        
+                        <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                            <h4 class="text-3xl font-serif text-slate-900 group-hover:text-brand-700 transition-colors">The Rage House</h4>
+                            <span class="text-xs font-bold tracking-widest text-slate-500 uppercase mt-2 sm:mt-0">Nov 2024 - Aug 2025</span>
+                        </div>
+                        
+                        <p class="text-lg font-medium text-slate-700 mb-4">Former Co-Founder & Lead BI Analyst</p>
+                        
+                        <p class="text-slate-600 font-light leading-relaxed">
+                            Spearheaded initial business intelligence frameworks and operational analysis. Developed data collection methods to track performance metrics and improve early-stage business efficiency.
+                        </p>
+                    </div>
+
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-24 bg-white">
+    <section id="projects" class="py-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header (Styled to match previous sections) -->
             <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-slate-200 pb-6">
-                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 font-serif">Selected Works</h2>
-                <p class="text-slate-500 mt-4 md:mt-0 font-sans text-sm tracking-wider uppercase">Case Studies</p>
+                <div>
+                    <h2 class="text-xs font-bold tracking-[0.2em] text-brand-600 uppercase mb-4 flex items-center">
+                        <span class="w-8 h-[1px] bg-brand-600 mr-3"></span> Selected Works
+                    </h2>
+                    <h3 class="text-4xl md:text-5xl font-bold text-slate-900 font-serif">Case Studies</h3>
+                </div>
+                <p class="text-slate-500 mt-4 md:mt-0 font-sans text-sm tracking-wider uppercase">Data Cleaning & Optimization</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
                 
-                <!-- Card 1 (Real Data) -->
+                <!-- Card 1 (Real Data - Updated) -->
                 <div class="project-card group relative bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden flex flex-col hover:shadow-2xl transition-all duration-300">
                     <!-- Image Holder -->
                     <div class="h-64 bg-slate-100 relative overflow-hidden group-hover:bg-slate-200 transition-colors">
-                        <!-- Placeholder SVG -->
-                        <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-400">
+                        <!-- Image with Fallback -->
+                        <img src="Data Integrity & Supply Chain Audit for GameZone Global.png" 
+                             alt="Data Integrity Audit Dashboard" 
+                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        
+                        <!-- Fallback SVG (Hidden if image loads) -->
+                        <div class="absolute inset-0 flex-col items-center justify-center text-slate-400 hidden bg-slate-100" style="display: flex;">
                             <i class="fas fa-database text-5xl mb-4 group-hover:scale-110 transition-transform duration-500"></i>
                             <span class="text-xs uppercase tracking-widest font-semibold">Data Audit</span>
                         </div>
+
                         <!-- Hover Overlay Button -->
                         <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center see-more-btn">
                             <button onclick="toggleCard(this)" class="bg-white text-slate-900 px-8 py-3 rounded-full font-medium hover:bg-brand-50 transition-colors shadow-xl">
@@ -330,8 +353,8 @@
                                 <p class="text-slate-600 mb-6 leading-relaxed font-light">
                                     To perform a rigorous Data Cleaning & Logic Audit to produce a "Golden Dataset." My goal was not just to fix errors, but to create a reliable foundation that allows the next analyst to answer executive questions with confidence.
                                 </p>
-                                <a href="#" class="inline-flex items-center text-slate-900 font-bold border-b-2 border-brand-400 hover:border-brand-600 hover:text-brand-700 transition-colors pb-1">
-                                    View Full Case Study <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                                <a href="https://github.com/Eyasin-terminal/2026-Project-Data_Cleanign_GameZone-Class_B" target="_blank" class="inline-flex items-center text-slate-900 font-bold border-b-2 border-brand-400 hover:border-brand-600 hover:text-brand-700 transition-colors pb-1">
+                                    View Full Case Study <i class="fab fa-github ml-2 text-sm"></i>
                                 </a>
                             </div>
                         </div>
@@ -403,52 +426,87 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-slate-950 text-white relative overflow-hidden">
-        <!-- Decoration -->
-        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-900/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+    <section id="contact" class="py-24 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Consistent Editorial Grid Layout -->
+            <div class="grid md:grid-cols-12 gap-12 items-start">
+                
+                <!-- Left Column: Info & Heading -->
+                <div class="md:col-span-5 relative md:sticky md:top-32">
+                    <h2 class="text-xs font-bold tracking-[0.2em] text-brand-600 uppercase mb-6 flex items-center">
+                        <span class="w-8 h-[1px] bg-brand-600 mr-3"></span> Contact
+                    </h2>
+                    <h3 class="text-4xl md:text-5xl font-serif text-slate-900 leading-[1.15] font-medium mb-8">
+                        Let's Start a <br/> Conversation
+                    </h3>
+                    <p class="text-slate-500 font-light text-lg mb-8 max-w-sm leading-relaxed">
+                        Ready to optimize your operations? I'm currently open to new projects and analysis opportunities.
+                    </p>
 
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-6xl font-bold font-serif mb-4">Get In Touch</h2>
-                <div class="w-24 h-1 bg-brand-600 mx-auto opacity-50"></div>
-                <p class="mt-6 text-slate-400 font-light text-lg">Ready to optimize your operations? Let's analyze the possibilities.</p>
-            </div>
-
-            <div class="bg-slate-900/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-800">
-                <form class="space-y-8" onsubmit="event.preventDefault(); alert('Thank you for your message! This is a demo form.');">
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <label for="name" class="block text-xs uppercase tracking-widest font-semibold text-slate-500 mb-2">Name</label>
-                            <input type="text" id="name" class="w-full bg-slate-950 border-b border-slate-700 focus:border-brand-500 text-white px-0 py-3 focus:outline-none transition-colors placeholder-slate-700" placeholder="Jane Doe" required>
-                        </div>
-                        <div>
-                            <label for="email" class="block text-xs uppercase tracking-widest font-semibold text-slate-500 mb-2">Email</label>
-                            <input type="email" id="email" class="w-full bg-slate-950 border-b border-slate-700 focus:border-brand-500 text-white px-0 py-3 focus:outline-none transition-colors placeholder-slate-700" placeholder="jane@company.com" required>
-                        </div>
-                    </div>
-                    <div>
-                        <label for="message" class="block text-xs uppercase tracking-widest font-semibold text-slate-500 mb-2">Message</label>
-                        <textarea id="message" rows="4" class="w-full bg-slate-950 border-b border-slate-700 focus:border-brand-500 text-white px-0 py-3 focus:outline-none transition-colors placeholder-slate-700" placeholder="Tell me about your project..." required></textarea>
-                    </div>
-                    <div class="flex flex-col md:flex-row justify-between items-center gap-8 mt-12 pt-8">
-                        <!-- Social Links -->
-                        <div class="flex space-x-8">
-                            <a href="https://linkedin.com" target="_blank" class="text-slate-500 hover:text-white transition-colors text-2xl">
+                    <div class="space-y-6 mb-12">
+                        <!-- Email Link -->
+                        <a href="mailto:eyasin.113t@gmail.com" class="block text-xl font-serif italic text-slate-900 hover:text-brand-600 transition-colors decoration-brand-200 underline underline-offset-4 decoration-1">
+                            eyasin.113t@gmail.com
+                        </a>
+                        
+                        <!-- Social Icons -->
+                        <div class="flex space-x-6">
+                            <a href="https://linkedin.com" target="_blank" class="text-slate-400 hover:text-brand-600 transition-colors text-2xl">
                                 <i class="fab fa-linkedin"></i>
                             </a>
-                            <a href="https://facebook.com" target="_blank" class="text-slate-500 hover:text-white transition-colors text-2xl">
+                            <a href="https://facebook.com" target="_blank" class="text-slate-400 hover:text-brand-600 transition-colors text-2xl">
                                 <i class="fab fa-facebook"></i>
                             </a>
-                            <a href="mailto:example@email.com" class="text-slate-500 hover:text-white transition-colors text-2xl">
+                            <a href="mailto:eyasin.113t@gmail.com" class="text-slate-400 hover:text-brand-600 transition-colors text-2xl">
                                 <i class="fas fa-envelope"></i>
                             </a>
                         </div>
-                        
-                        <button type="submit" class="w-full md:w-auto bg-white text-slate-950 px-10 py-4 rounded-full font-bold hover:bg-brand-50 transition-all shadow-lg hover:shadow-brand-500/20 uppercase tracking-wide text-sm">
-                            Send Message
-                        </button>
                     </div>
-                </form>
+                    
+                    <!-- Decorative Divider -->
+                    <div class="hidden md:block absolute -right-6 top-0 w-[1px] h-full bg-slate-200"></div>
+                </div>
+
+                <!-- Right Column: Editorial Form -->
+                <div class="md:col-span-7 pt-2 md:pl-8">
+                    <!-- Note: For a static site, this form uses a mailto action as a fallback, 
+                         or requires a service like Formspree to actually send emails. -->
+                    <form action="mailto:eyasin.113t@gmail.com" method="post" enctype="text/plain" class="space-y-10">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="relative group">
+                                <input type="text" id="name" name="name" 
+                                       class="peer w-full bg-transparent border-b border-slate-300 py-3 text-slate-900 focus:outline-none focus:border-slate-900 transition-colors placeholder-transparent" 
+                                       placeholder="Name" required>
+                                <label for="name" class="absolute left-0 -top-3.5 text-xs text-slate-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-slate-400 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-slate-900 uppercase tracking-wider font-medium">
+                                    Name
+                                </label>
+                            </div>
+                            <div class="relative group">
+                                <input type="email" id="email" name="email" 
+                                       class="peer w-full bg-transparent border-b border-slate-300 py-3 text-slate-900 focus:outline-none focus:border-slate-900 transition-colors placeholder-transparent" 
+                                       placeholder="Email" required>
+                                <label for="email" class="absolute left-0 -top-3.5 text-xs text-slate-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-slate-400 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-slate-900 uppercase tracking-wider font-medium">
+                                    Email
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="relative group">
+                            <textarea id="message" name="message" rows="4" 
+                                      class="peer w-full bg-transparent border-b border-slate-300 py-3 text-slate-900 focus:outline-none focus:border-slate-900 transition-colors placeholder-transparent resize-none" 
+                                      placeholder="Message" required></textarea>
+                            <label for="message" class="absolute left-0 -top-3.5 text-xs text-slate-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-slate-400 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-slate-900 uppercase tracking-wider font-medium">
+                                Message
+                            </label>
+                        </div>
+
+                        <div class="pt-4">
+                            <button type="submit" class="group relative px-10 py-4 bg-slate-900 text-white font-medium tracking-wide text-sm uppercase overflow-hidden hover:bg-brand-600 transition-colors duration-300 rounded-sm">
+                                <span class="relative z-10">Send Message</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
