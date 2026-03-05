@@ -125,48 +125,124 @@
 
     <!-- Articles List -->
     <section class="py-24 bg-slate-50 min-h-screen">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <!-- Article 1: Link to External Source (e.g., Facebook/LinkedIn) -->
-            <article class="group relative bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-slate-100 mb-8 hover:shadow-lg transition-all duration-300 hover:border-brand-200">
-                <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 mb-4">
-                    <h2 class="text-2xl md:text-3xl font-serif font-bold text-slate-900 group-hover:text-brand-700 transition-colors">
-                        <!-- UPDATE HREF HERE with your actual link -->
-                        <a href="https://www.linkedin.com/posts/arafathandeyasin_dataanalytics-datacleaning-criticalthinking-activity-7418577341406253056-5SSz" target="_blank" class="focus:outline-none">
-                            <span class="absolute inset-0" aria-hidden="true"></span>
+            <!-- Grid Container for Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Article 1 -->
+                <article class="group relative bg-white border border-slate-200 hover:border-slate-900 transition-all duration-500 flex flex-col h-full">
+                    <!-- Image -->
+                    <div class="aspect-video w-full overflow-hidden bg-slate-100 shrink-0 border-b border-slate-200 group-hover:border-slate-900 transition-colors duration-500">
+                        <img src="article_1_banner.png" alt="Article Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="p-6 md:p-8 flex flex-col flex-grow">
+                        <!-- Date -->
+                        <time class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3 block">Jan 12, 2025</time>
+                        
+                        <h2 class="text-xl font-serif font-bold text-slate-900 mb-3 line-clamp-2 group-hover:text-slate-700 transition-colors">
                             Why am I not getting interview calls-even with strong projects and a solid portfolio?
+                        </h2>
+                        <!-- 2-line gist -->
+                        <p class="text-slate-600 font-light text-sm leading-relaxed mb-8 line-clamp-2 flex-grow">
+                            The answer is often simpler than we think. Recruiters are not evaluating whether your projects are complex, but rather...
+                        </p>
+                        
+                        <!-- Button -->
+                        <a href="https://www.linkedin.com/posts/arafathandeyasin_dataanalytics-datacleaning-criticalthinking-activity-7418577341406253056-5SSz" target="_blank" class="mt-auto flex items-center justify-between w-full pt-5 border-t border-slate-200 group-hover:border-slate-900 text-slate-900 font-bold text-xs uppercase tracking-widest transition-colors duration-500 focus:outline-none">
+                            <span class="hover:text-brand-600 transition-colors">Read Article</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                         </a>
-                    </h2>
-                    <span class="text-xs font-bold uppercase tracking-widest text-slate-400 shrink-0">Jan 12, 2025</span>
-                </div>
-                <p class="text-slate-600 font-light leading-relaxed mb-6">
-                    The answer is often simpler than we think. Recruiters are not evaluating whether your proj...
-                </p>
-                <div class="flex items-center text-sm font-bold uppercase tracking-widest text-brand-600">
-                    Read Article <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                </div>
-            </article>
+                    </div>
+                </article>
 
-            <!-- Article 2: Link to External Source -->
-            <article class="group relative bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-slate-100 mb-8 hover:shadow-lg transition-all duration-300 hover:border-brand-200">
-                <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 mb-4">
-                    <h2 class="text-2xl md:text-3xl font-serif font-bold text-slate-900 group-hover:text-brand-700 transition-colors">
-                        <!-- UPDATE HREF HERE with your actual link -->
-                        <a href="https://www.linkedin.com/posts/arafathandeyasin_%F0%9D%90%88%F0%9D%90%A7%F0%9D%90%AC%F0%9D%90%A2%F0%9D%90%A0%F0%9D%90%A1%F0%9D%90%AD%F0%9D%90%AC-%F0%9D%90%9F%F0%9D%90%AB%F0%9D%90%A8%F0%9D%90%A6-%F0%9D%90%9A-%F0%9D%90%AB%F0%9D%90%9E%F0%9D%90%9A%F0%9D%90%A5-%F0%9D%90%9C%F0%9D%90%A8-%F0%9D%90%9F%F0%9D%90%A8%F0%9D%90%AE%F0%9D%90%A7%F0%9D%90%9D%F0%9D%90%9E%F0%9D%90%AB-activity-7409812896345460736-ZVas" target="_blank" class="focus:outline-none">
-                            <span class="absolute inset-0" aria-hidden="true"></span>
-                           Insights from a real co-founder of a first-of-its kind startup in Bangladesh
+                <!-- Article 2 -->
+                <article class="group relative bg-white border border-slate-200 hover:border-slate-900 transition-all duration-500 flex flex-col h-full">
+                    <!-- Image -->
+                    <div class="aspect-video w-full overflow-hidden bg-slate-100 shrink-0 border-b border-slate-200 group-hover:border-slate-900 transition-colors duration-500">
+                        <img src="article_2_banner.png" alt="Startup Insights Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="p-6 md:p-8 flex flex-col flex-grow">
+                        <!-- Date -->
+                        <time class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3 block">Dec 05, 2024</time>
+                        
+                        <h2 class="text-xl font-serif font-bold text-slate-900 mb-3 line-clamp-2 group-hover:text-slate-700 transition-colors">
+                            Insights from a real co-founder of a first-of-its kind startup in Bangladesh
+                        </h2>
+                        <!-- 2-line gist -->
+                        <p class="text-slate-600 font-light text-sm leading-relaxed mb-8 line-clamp-2 flex-grow">
+                            🪛The numbers are twisted due to company policy. While the Rage Room business model exists globally, I was among the founding...
+                        </p>
+                        
+                        <!-- Button -->
+                        <a href="https://www.linkedin.com/posts/arafathandeyasin_%F0%9D%90%88%F0%9D%90%A7%F0%9D%90%AC%F0%9D%90%A2%F0%9D%90%A0%F0%9D%90%A1%F0%9D%90%AD%F0%9D%90%AC-%F0%9D%90%9F%F0%9D%90%AB%F0%9D%90%A8%F0%9D%90%A6-%F0%9D%90%9A-%F0%9D%90%AB%F0%9D%90%9E%F0%9D%90%9A%F0%9D%90%A5-%F0%9D%90%9C%F0%9D%90%A8-%F0%9D%90%9F%F0%9D%90%A8%F0%9D%90%AE%F0%9D%90%A7%F0%9D%90%9D%F0%9D%90%9E%F0%9D%90%AB-activity-7409812896345460736-ZVas" target="_blank" class="mt-auto flex items-center justify-between w-full pt-5 border-t border-slate-200 group-hover:border-slate-900 text-slate-900 font-bold text-xs uppercase tracking-widest transition-colors duration-500 focus:outline-none">
+                            <span class="hover:text-brand-600 transition-colors">Read Article</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                         </a>
-                    </h2>
-                    <span class="text-xs font-bold uppercase tracking-widest text-slate-400 shrink-0">Dec 05, 2024</span>
-                </div>
-                <p class="text-slate-600 font-light leading-relaxed mb-6">
-                    🪛The numbers are twisted due to company policy. While the Rage Room business model exists globally, I was among the founding members who introduced it to Ba...
-                </p>
-                <div class="flex items-center text-sm font-bold uppercase tracking-widest text-brand-600">
-                    Read Article <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                </div>
-            </article>
+                    </div>
+                </article>
 
+                <!-- Article 3 -->
+                <article class="group relative bg-white border border-slate-200 hover:border-slate-900 transition-all duration-500 flex flex-col h-full">
+                    <!-- Image -->
+                    <div class="aspect-video w-full overflow-hidden bg-slate-100 shrink-0 border-b border-slate-200 group-hover:border-slate-900 transition-colors duration-500">
+                        <img src="article_3_banner.png" alt="Startup Insights Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="p-6 md:p-8 flex flex-col flex-grow">
+                        <!-- Date -->
+                        <time class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3 block">Dec 05, 2024</time>
+                        
+                        <h2 class="text-xl font-serif font-bold text-slate-900 mb-3 line-clamp-2 group-hover:text-slate-700 transition-colors">
+                            Insights from a real co-founder of a first-of-its kind startup in Bangladesh
+                        </h2>
+                        <!-- 2-line gist -->
+                        <p class="text-slate-600 font-light text-sm leading-relaxed mb-8 line-clamp-2 flex-grow">
+                            🪛The numbers are twisted due to company policy. While the Rage Room business model exists globally, I was among the founding...
+                        </p>
+                        
+                        <!-- Button -->
+                        <a href="https://www.linkedin.com/posts/arafathandeyasin_%F0%9D%90%88%F0%9D%90%A7%F0%9D%90%AC%F0%9D%90%A2%F0%9D%90%A0%F0%9D%90%A1%F0%9D%90%AD%F0%9D%90%AC-%F0%9D%90%9F%F0%9D%90%AB%F0%9D%90%A8%F0%9D%90%A6-%F0%9D%90%9A-%F0%9D%90%AB%F0%9D%90%9E%F0%9D%90%9A%F0%9D%90%A5-%F0%9D%90%9C%F0%9D%90%A8-%F0%9D%90%9F%F0%9D%90%A8%F0%9D%90%AE%F0%9D%90%A7%F0%9D%90%9D%F0%9D%90%9E%F0%9D%90%AB-activity-7409812896345460736-ZVas" target="_blank" class="mt-auto flex items-center justify-between w-full pt-5 border-t border-slate-200 group-hover:border-slate-900 text-slate-900 font-bold text-xs uppercase tracking-widest transition-colors duration-500 focus:outline-none">
+                            <span class="hover:text-brand-600 transition-colors">Read Article</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="group relative bg-white border border-slate-200 hover:border-slate-900 transition-all duration-500 flex flex-col h-full">
+                    <!-- Image -->
+                    <div class="aspect-video w-full overflow-hidden bg-slate-100 shrink-0 border-b border-slate-200 group-hover:border-slate-900 transition-colors duration-500">
+                        <img src="article_4_banner.png" alt="Startup Insights Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="p-6 md:p-8 flex flex-col flex-grow">
+                        <!-- Date -->
+                        <time class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3 block">Dec 05, 2024</time>
+                        
+                        <h2 class="text-xl font-serif font-bold text-slate-900 mb-3 line-clamp-2 group-hover:text-slate-700 transition-colors">
+                            Insights from a real co-founder of a first-of-its kind startup in Bangladesh
+                        </h2>
+                        <!-- 2-line gist -->
+                        <p class="text-slate-600 font-light text-sm leading-relaxed mb-8 line-clamp-2 flex-grow">
+                            🪛The numbers are twisted due to company policy. While the Rage Room business model exists globally, I was among the founding...
+                        </p>
+                        
+                        <!-- Button -->
+                        <a href="https://www.linkedin.com/posts/arafathandeyasin_%F0%9D%90%88%F0%9D%90%A7%F0%9D%90%AC%F0%9D%90%A2%F0%9D%90%A0%F0%9D%90%A1%F0%9D%90%AD%F0%9D%90%AC-%F0%9D%90%9F%F0%9D%90%AB%F0%9D%90%A8%F0%9D%90%A6-%F0%9D%90%9A-%F0%9D%90%AB%F0%9D%90%9E%F0%9D%90%9A%F0%9D%90%A5-%F0%9D%90%9C%F0%9D%90%A8-%F0%9D%90%9F%F0%9D%90%A8%F0%9D%90%AE%F0%9D%90%A7%F0%9D%90%9D%F0%9D%90%9E%F0%9D%90%AB-activity-7409812896345460736-ZVas" target="_blank" class="mt-auto flex items-center justify-between w-full pt-5 border-t border-slate-200 group-hover:border-slate-900 text-slate-900 font-bold text-xs uppercase tracking-widest transition-colors duration-500 focus:outline-none">
+                            <span class="hover:text-brand-600 transition-colors">Read Article</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
         </div>
     </section>
 
