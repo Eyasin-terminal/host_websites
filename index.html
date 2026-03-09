@@ -81,6 +81,11 @@
             align-items: center;
             justify-content: center;
         }
+
+        /* Go to Top Button Transition */
+        #go-to-top {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-200 selection:text-brand-900">
@@ -693,8 +698,13 @@
             </div>
         </div>
     </footer>
+    
+    <!-- Go To Top Button -->
+    <button id="go-to-top" class="fixed bottom-8 right-8 z-[100] w-12 h-12 bg-slate-900 text-white flex items-center justify-center rounded-full shadow-2xl opacity-0 invisible hover:bg-brand-600 active:scale-90 transition-all duration-300 cursor-pointer" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-    <!-- Scripts -->
+<!-- Scripts -->
     <script>
     // --- Certification Data ---
     const certifications = {
@@ -746,12 +756,10 @@
         const data = certifications[certId];
         if (!data) return;
 
-        // Populate Modal
         document.getElementById('modal-title').innerText = data.title;
         document.getElementById('modal-desc').innerText = data.desc;
         document.getElementById('modal-link').href = data.link;
 
-        // Inject Skills
         const skillsContainer = document.getElementById('modal-skills');
         skillsContainer.innerHTML = '';
         data.skills.forEach(skill => {
@@ -761,16 +769,12 @@
             skillsContainer.appendChild(span);
         });
 
-        // Show Modal
         certModal.classList.remove('hidden');
-        // Trigger animations
         setTimeout(() => {
             modalBackdrop.classList.replace('opacity-0', 'opacity-100');
             modalContainer.classList.replace('translate-y-8', 'translate-y-0');
             modalContainer.classList.replace('opacity-0', 'opacity-100');
         }, 10);
-        
-        // Prevent body scroll
         document.body.style.overflow = 'hidden';
     }
 
@@ -778,39 +782,26 @@
         modalBackdrop.classList.replace('opacity-100', 'opacity-0');
         modalContainer.classList.replace('translate-y-0', 'translate-y-8');
         modalContainer.classList.replace('opacity-100', 'opacity-0');
-        
         setTimeout(() => {
             certModal.classList.add('hidden');
             document.body.style.overflow = '';
         }, 500);
     }
 
-    // Event Delegation for Marquee Items
-    document.getElementById('marquee-track').addEventListener('click', (e) => {
-        const item = e.target.closest('.marquee-item');
-        if (item) {
-            const certId = item.getAttribute('data-cert');
-            openCertModal(certId);
-        }
-    });
+    // Modal Event Listeners
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeCertModal);
+    if (modalBackdrop) modalBackdrop.addEventListener('click', closeCertModal);
 
-    closeModalBtn.addEventListener('click', closeCertModal);
-    modalBackdrop.addEventListener('click', closeCertModal);
-
-    // --- Navigation & Core UI ---
+    // Navigation Toggle Logic
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
-
-    btn.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
-    });
-
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            menu.classList.add('hidden');
+    if (btn) {
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
         });
-    });
+    }
 
+    // Project Card Toggle
     window.toggleCard = function(element) {
         const card = element.closest('.project-card');
         if (!card) return;
@@ -827,40 +818,48 @@
         } 
     };
     
+    // Core Initializer
     document.addEventListener('DOMContentLoaded', () => {
-        const container = document.getElementById('carousel-container');
-        if (!container) return; 
-        const cards = container.querySelectorAll('.project-card');
-        const dots = document.querySelectorAll('.carousel-dot');
-        if (cards.length === 0 || dots.length === 0) return;
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const index = Array.from(cards).indexOf(entry.target);
-                    dots.forEach((dot, i) => {
-                        if (i === index) {
-                            dot.classList.remove('bg-slate-300', 'w-2');
-                            dot.classList.add('bg-slate-900', 'w-6');
-                        } else {
-                            dot.classList.add('bg-slate-300', 'w-2');
-                            dot.classList.remove('bg-slate-900', 'w-6');
-                        }
-                    });
+        // 1. Marquee Click Listener
+        const track = document.getElementById('marquee-track');
+        if (track) {
+            track.addEventListener('click', (e) => {
+                const item = e.target.closest('.marquee-item');
+                if (item) {
+                    const certId = item.getAttribute('data-cert');
+                    openCertModal(certId);
                 }
             });
-        }, {
-            root: container,
-            threshold: 0.6 
-        });
+        }
 
-        cards.forEach(card => observer.observe(card));
+        // 2. Carousel Logic
+        const container = document.getElementById('carousel-container');
+        if (container) {
+            const cards = container.querySelectorAll('.project-card');
+            const dots = document.querySelectorAll('.carousel-dot');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const index = Array.from(cards).indexOf(entry.target);
+                        dots.forEach((dot, i) => {
+                            if (i === index) {
+                                dot.classList.remove('bg-slate-300', 'w-2');
+                                dot.classList.add('bg-slate-900', 'w-6');
+                            } else {
+                                dot.classList.add('bg-slate-300', 'w-2');
+                                dot.classList.remove('bg-slate-900', 'w-6');
+                            }
+                        });
+                    }
+                });
+            }, { root: container, threshold: 0.6 });
+            cards.forEach(card => observer.observe(card));
+        }
 
-        // Contact Form Handling
+        // 3. Contact Form Logic
         const contactForm = document.getElementById("contact-form");
         const successMessage = document.getElementById("contact-success");
         const submitBtn = document.getElementById("submit-btn");
-
         if (contactForm) {
             contactForm.addEventListener("submit", async function(e) {
                 e.preventDefault(); 
@@ -888,8 +887,30 @@
                 }
             });
         }
+
+        // 4. Go To Top Button Logic
+        const goToTopBtn = document.getElementById('go-to-top');
+        if (goToTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    goToTopBtn.classList.remove('opacity-0', 'invisible');
+                    goToTopBtn.classList.add('opacity-100', 'visible');
+                } else {
+                    goToTopBtn.classList.add('opacity-0', 'invisible');
+                    goToTopBtn.classList.remove('opacity-100', 'visible');
+                }
+            });
+
+            goToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
     });
 
+    // Global Styles Injection
     const styleSheet = document.createElement("style");
     styleSheet.innerText = `
         @keyframes fadeIn {
