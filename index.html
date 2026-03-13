@@ -428,160 +428,175 @@
         </div>
     </section>
 
- <!-- Projects Section -->
-    <section id="projects" class="py-24 lg:py-32 bg-slate-50 relative">
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 lg:py-32 bg-slate-900 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Section Header -->
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 border-b border-slate-200 pb-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 border-b border-white/10 pb-8">
                 <div>
-                    <h2 class="text-xs font-bold tracking-[0.2em] text-slate-400 uppercase mb-4 flex items-center">
-                        <span class="w-8 h-[1px] bg-slate-400 mr-3"></span> Selected Works
-                    </h2>
-                    <h3 class="text-4xl md:text-5xl font-bold text-slate-900 font-serif">Case Studies</h3>
+                    <h2 class="text-xs font-bold tracking-[0.3em] text-brand-400 uppercase mb-4">Investigative Works</h2>
+                    <h3 class="text-4xl md:text-6xl font-bold text-white font-serif italic">The Data Portfolio.</h3>
                 </div>
-                <!-- Scroll Hint for Desktop -->
-                <div class="hidden md:flex text-slate-400 text-xs font-bold uppercase tracking-widest items-center gap-3">
-                    <span>Slide to explore</span> <i class="fas fa-arrow-right animate-pulse"></i>
+                <div class="hidden md:flex text-slate-500 text-[10px] font-bold uppercase tracking-[0.2em] items-center gap-4">
+                    <span>Swipe to explore cases</span> <i class="fas fa-chevron-right animate-pulse text-brand-500"></i>
                 </div>
             </div>
 
-            <!-- Carousel Container -->
-            <div id="carousel-container" class="flex overflow-x-auto snap-x snap-mandatory gap-8 pb-8 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide items-stretch">
+            <!-- CAROUSEL -->
+            <div id="carousel-container" class="flex overflow-x-auto snap-x snap-mandatory gap-6 md:gap-8 pb-12 scrollbar-hide items-stretch">
                 
-                <!-- Card 1: GameZone Global -->
-                <div class="project-card w-[85vw] md:w-[22.5rem] snap-center flex-shrink-0 group relative bg-white border border-slate-200 hover:border-slate-900 transition-all duration-500 overflow-hidden flex flex-col min-h-[22rem]">
-                    <div class="p-6 md:p-8 flex flex-col h-full relative z-10">
-                        <!-- Top Tag -->
-                        <div class="flex justify-between items-start">
-                            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900 border border-slate-900 px-3 py-1">
-                                MS Excel
-                            </span>
-                        </div>
-
-                        <!-- Center Headline -->
-                        <div class="mt-auto mb-6">
-                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">GameZone Global</p>
-                            <h3 class="text-2xl font-serif font-bold text-slate-900 leading-tight group-hover:text-slate-600 transition-colors">
-                                Data Integrity & Supply Chain Audit
-                            </h3>
-                        </div>
-
-                        <!-- Bottom Action -->
-                        <div>
-                            <button onclick="toggleCard(this)" class="group/btn flex items-center justify-between w-full pt-4 border-t border-slate-200 group-hover:border-slate-900 text-slate-900 font-bold text-xs uppercase tracking-widest transition-colors duration-500 cursor-pointer">
-                                <span>View Details</span>
-                                <i class="fas fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
-                            </button>
-                        </div>
+                <!-- Card 1: Data Audit -->
+                <div class="project-card w-[85vw] md:w-[26rem] snap-center flex-shrink-0 group relative bg-slate-800 overflow-hidden flex flex-col min-h-[34rem] transition-all duration-500 hover:shadow-2xl hover:shadow-brand-500/20">
+                    <div class="absolute inset-0 z-0">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" 
+                             class="w-full h-full object-cover grayscale opacity-40 transition-all duration-700 group-hover:scale-110 group-hover:grayscale-0" alt="Data Audit">
+                        <div class="absolute inset-0 card-bg-overlay"></div>
                     </div>
 
-                    <div class="details-panel transform translate-y-full absolute inset-0 z-20 bg-slate-950 text-white p-8 md:p-10 flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]">
-                        <button onclick="toggleCard(this)" class="absolute top-6 right-6 text-slate-500 hover:text-white transition-colors cursor-pointer p-2">
-                            <i class="fas fa-times text-xl"></i>
+                    <div class="relative z-10 p-8 md:p-10 flex flex-col h-full text-white">
+                        <div class="flex justify-between items-start mb-auto">
+                            <span class="text-[9px] font-bold uppercase tracking-[0.3em] text-brand-400 border border-brand-400/30 px-3 py-1 bg-brand-400/5">Case Study 01</span>
+                            <i class="fas fa-file-invoice text-white/20 text-xl"></i>
+                        </div>
+                        <div class="mb-8">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-2">GameZone Global</p>
+                            <h3 class="text-3xl font-serif font-bold leading-tight mb-8 group-hover:text-brand-400 transition-colors">Data Integrity & Supply Chain Audit</h3>
+                            <div class="flex items-center gap-6 py-5 border-y border-white/10">
+                                <div>
+                                    <p class="text-[9px] uppercase tracking-widest text-slate-500 mb-1">Accuracy</p>
+                                    <p class="text-xl font-bold text-brand-400">99.9%</p>
+                                </div>
+                                <div class="w-px h-10 bg-white/10"></div>
+                                <div>
+                                    <p class="text-[9px] uppercase tracking-widest text-slate-500 mb-1">Status</p>
+                                    <p class="text-xl font-bold text-white uppercase">Verified</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="toggleCard(this)" class="mt-auto group/btn flex items-center justify-between w-full text-[10px] font-bold uppercase tracking-[0.2em] cursor-pointer">
+                            <span>Explore Details</span>
+                            <div class="h-10 w-10 rounded-full border border-white/20 flex items-center justify-center group-hover/btn:bg-white group-hover/btn:text-slate-900 transition-all">
+                                <i class="fas fa-plus"></i>
+                            </div>
                         </button>
+                    </div>
+
+                    <!-- Details Panel -->
+                    <div class="details-panel transform translate-y-full absolute inset-0 z-20 bg-slate-950/95 backdrop-blur-xl text-white p-10 flex flex-col transition-transform duration-500">
+                        <button onclick="toggleCard(this)" class="absolute top-8 right-8 text-slate-500 hover:text-white p-2 transition-colors"><i class="fas fa-times text-2xl"></i></button>
                         <div class="my-auto">
-                            <h4 class="text-xs font-bold tracking-[0.2em] text-slate-400 uppercase mb-6 border-b border-slate-800 pb-2 inline-block">Project Overview</h4>
-                            <p class="text-base text-slate-300 leading-relaxed font-light mb-10">
-                                Performed a rigorous Data Cleaning & Logic Audit to produce a "Golden Dataset." Created a reliable foundation allowing analysts to answer executive questions with confidence.
+                            <h4 class="text-xs font-bold text-brand-400 tracking-[0.4em] uppercase mb-6">Technical Overview</h4>
+                            <p class="text-base text-slate-300 font-light leading-loose mb-12">
+                                Performed a rigorous Data Cleaning & Logic Audit to produce a "Golden Dataset." This project established a reliable infrastructure for executive reporting, eliminating data discrepancies.
                             </p>
-                            <a href="https://github.com/Eyasin-terminal/2026-Project-Data_Cleanign_GameZone-Class_B" target="_blank" class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-white border-b border-white hover:text-slate-300 hover:border-slate-300 pb-1 transition-colors">
-                                View on GitHub <i class="fas fa-arrow-right ml-3"></i>
-                            </a>
+                            <a href="https://github.com/Eyasin-terminal/2026-Project-Data_Cleanign_GameZone-Class_B" target="_blank" class="inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-white border-b-2 border-brand-500 pb-1 hover:text-brand-400 transition-colors">GitHub Repository <i class="fas fa-arrow-right ml-4"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Card 2: Sales Optimization -->
-                <div class="project-card w-[85vw] md:w-[22.5rem] snap-center flex-shrink-0 group relative bg-white border border-slate-200 hover:border-slate-900 transition-all duration-500 overflow-hidden flex flex-col min-h-[22rem]">
-                    <div class="p-6 md:p-8 flex flex-col h-full relative z-10">
-                        <div class="flex justify-between items-start">
-                            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900 border border-slate-900 px-3 py-1">
-                                Tool
-                            </span>
-                        </div>
-
-                        <div class="mt-auto mb-6">
-                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Project Coming Soon!</p>
-                            <h3 class="text-2xl font-serif font-bold text-slate-900 leading-tight group-hover:text-slate-600 transition-colors">
-                                Project Coming Soon!
-                            </h3>
-                        </div>
-
-                        <div>
-                            <button onclick="toggleCard(this)" class="group/btn flex items-center justify-between w-full pt-4 border-t border-slate-200 group-hover:border-slate-900 text-slate-900 font-bold text-xs uppercase tracking-widest transition-colors duration-500 cursor-pointer">
-                                <span>View Details</span>
-                                <i class="fas fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
-                            </button>
-                        </div>
+                <!-- Card 2: Coming Soon -->
+                <div class="project-card w-[85vw] md:w-[26rem] snap-center flex-shrink-0 group relative bg-slate-800 overflow-hidden flex flex-col min-h-[34rem] transition-all duration-500 hover:shadow-2xl hover:shadow-brand-500/20">
+                    <div class="absolute inset-0 z-0">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" 
+                             class="w-full h-full object-cover grayscale opacity-40 transition-all duration-700 group-hover:scale-110 group-hover:grayscale-0" alt="Data Audit">
+                        <div class="absolute inset-0 card-bg-overlay"></div>
                     </div>
 
-                    <div class="details-panel transform translate-y-full absolute inset-0 z-20 bg-slate-950 text-white p-8 md:p-10 flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]">
-                        <button onclick="toggleCard(this)" class="absolute top-6 right-6 text-slate-500 hover:text-white transition-colors cursor-pointer p-2">
-                            <i class="fas fa-times text-xl"></i>
+                    <div class="relative z-10 p-8 md:p-10 flex flex-col h-full text-white">
+                        <div class="flex justify-between items-start mb-auto">
+                            <span class="text-[9px] font-bold uppercase tracking-[0.3em] text-brand-400 border border-brand-400/30 px-3 py-1 bg-brand-400/5">Case Study 01</span>
+                            <i class="fas fa-file-invoice text-white/20 text-xl"></i>
+                        </div>
+                        <div class="mb-8">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-2">Coming Soon</p>
+                            <h3 class="text-3xl font-serif font-bold leading-tight mb-8 group-hover:text-brand-400 transition-colors">Coming Soon</h3>
+                            <div class="flex items-center gap-6 py-5 border-y border-white/10">
+                                <div>
+                                    <p class="text-[9px] uppercase tracking-widest text-slate-500 mb-1">Coming Soon</p>
+                                    <p class="text-xl font-bold text-brand-400">99.9%</p>
+                                </div>
+                                <div class="w-px h-10 bg-white/10"></div>
+                                <div>
+                                    <p class="text-[9px] uppercase tracking-widest text-slate-500 mb-1">Coming Soon</p>
+                                    <p class="text-xl font-bold text-white uppercase">Coming Soon</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="toggleCard(this)" class="mt-auto group/btn flex items-center justify-between w-full text-[10px] font-bold uppercase tracking-[0.2em] cursor-pointer">
+                            <span>Explore Details</span>
+                            <div class="h-10 w-10 rounded-full border border-white/20 flex items-center justify-center group-hover/btn:bg-white group-hover/btn:text-slate-900 transition-all">
+                                <i class="fas fa-plus"></i>
+                            </div>
                         </button>
+                    </div>
+
+                    <!-- Details Panel -->
+                    <div class="details-panel transform translate-y-full absolute inset-0 z-20 bg-slate-950/95 backdrop-blur-xl text-white p-10 flex flex-col transition-transform duration-500">
+                        <button onclick="toggleCard(this)" class="absolute top-8 right-8 text-slate-500 hover:text-white p-2 transition-colors"><i class="fas fa-times text-2xl"></i></button>
                         <div class="my-auto">
-                            <h4 class="text-xs font-bold tracking-[0.2em] text-slate-400 uppercase mb-6 border-b border-slate-800 pb-2 inline-block">Project Overview</h4>
-                            <p class="text-base text-slate-300 leading-relaxed font-light mb-10">
-                                Further details regarding this SaaS product analysis will be published here upon project completion. Check back soon for the full breakdown.
+                            <h4 class="text-xs font-bold text-brand-400 tracking-[0.4em] uppercase mb-6">Technical Overview</h4>
+                            <p class="text-base text-slate-300 font-light leading-loose mb-12">
+                                Coming Soon.
                             </p>
-                            <a href="#" class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-white border-b border-white hover:text-slate-300 hover:border-slate-300 pb-1 transition-colors">
-                                View on GitHub <i class="fas fa-arrow-right ml-3"></i>
-                            </a>
+                            <a href="https://github.com/Eyasin-terminal/2026-Project-Data_Cleanign_GameZone-Class_B" target="_blank" class="inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-white border-b-2 border-brand-500 pb-1 hover:text-brand-400 transition-colors">GitHub Repository <i class="fas fa-arrow-right ml-4"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Card 3: Segmentation -->
-                <div class="project-card w-[85vw] md:w-[22.5rem] snap-center flex-shrink-0 group relative bg-white border border-slate-200 hover:border-slate-900 transition-all duration-500 overflow-hidden flex flex-col min-h-[22rem]">
-                    <div class="p-6 md:p-8 flex flex-col h-full relative z-10">
-                        <div class="flex justify-between items-start">
-                            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900 border border-slate-900 px-3 py-1">
-                                Tool
-                            </span>
-                        </div>
-
-                        <div class="mt-auto mb-6">
-                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">SaaS Product</p>
-                            <h3 class="text-2xl font-serif font-bold text-slate-900 leading-tight group-hover:text-slate-600 transition-colors">
-                                Project Coming Soon!
-                            </h3>
-                        </div>
-
-                        <div>
-                            <button onclick="toggleCard(this)" class="group/btn flex items-center justify-between w-full pt-4 border-t border-slate-200 group-hover:border-slate-900 text-slate-900 font-bold text-xs uppercase tracking-widest transition-colors duration-500 cursor-pointer">
-                                <span>View Details</span>
-                                <i class="fas fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
-                            </button>
-                        </div>
+                <!-- Card 1: Data Audit -->
+                <div class="project-card w-[85vw] md:w-[26rem] snap-center flex-shrink-0 group relative bg-slate-800 overflow-hidden flex flex-col min-h-[34rem] transition-all duration-500 hover:shadow-2xl hover:shadow-brand-500/20">
+                    <div class="absolute inset-0 z-0">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" 
+                             class="w-full h-full object-cover grayscale opacity-40 transition-all duration-700 group-hover:scale-110 group-hover:grayscale-0" alt="Data Audit">
+                        <div class="absolute inset-0 card-bg-overlay"></div>
                     </div>
 
-                    <div class="details-panel transform translate-y-full absolute inset-0 z-20 bg-slate-950 text-white p-8 md:p-10 flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]">
-                        <button onclick="toggleCard(this)" class="absolute top-6 right-6 text-slate-500 hover:text-white transition-colors cursor-pointer p-2">
-                            <i class="fas fa-times text-xl"></i>
+                    <div class="relative z-10 p-8 md:p-10 flex flex-col h-full text-white">
+                        <div class="flex justify-between items-start mb-auto">
+                            <span class="text-[9px] font-bold uppercase tracking-[0.3em] text-brand-400 border border-brand-400/30 px-3 py-1 bg-brand-400/5">Case Study 01</span>
+                            <i class="fas fa-file-invoice text-white/20 text-xl"></i>
+                        </div>
+                        <div class="mb-8">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-2">Coming Soon</p>
+                            <h3 class="text-3xl font-serif font-bold leading-tight mb-8 group-hover:text-brand-400 transition-colors">Coming Soon</h3>
+                            <div class="flex items-center gap-6 py-5 border-y border-white/10">
+                                <div>
+                                    <p class="text-[9px] uppercase tracking-widest text-slate-500 mb-1">Coming Soon</p>
+                                    <p class="text-xl font-bold text-brand-400">99.9%</p>
+                                </div>
+                                <div class="w-px h-10 bg-white/10"></div>
+                                <div>
+                                    <p class="text-[9px] uppercase tracking-widest text-slate-500 mb-1">Coming Soon</p>
+                                    <p class="text-xl font-bold text-white uppercase">Coming Soon</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="toggleCard(this)" class="mt-auto group/btn flex items-center justify-between w-full text-[10px] font-bold uppercase tracking-[0.2em] cursor-pointer">
+                            <span>Explore Details</span>
+                            <div class="h-10 w-10 rounded-full border border-white/20 flex items-center justify-center group-hover/btn:bg-white group-hover/btn:text-slate-900 transition-all">
+                                <i class="fas fa-plus"></i>
+                            </div>
                         </button>
+                    </div>
+
+                    <!-- Details Panel -->
+                    <div class="details-panel transform translate-y-full absolute inset-0 z-20 bg-slate-950/95 backdrop-blur-xl text-white p-10 flex flex-col transition-transform duration-500">
+                        <button onclick="toggleCard(this)" class="absolute top-8 right-8 text-slate-500 hover:text-white p-2 transition-colors"><i class="fas fa-times text-2xl"></i></button>
                         <div class="my-auto">
-                            <h4 class="text-xs font-bold tracking-[0.2em] text-slate-400 uppercase mb-6 border-b border-slate-800 pb-2 inline-block">Project Overview</h4>
-                            <p class="text-base text-slate-300 leading-relaxed font-light mb-10">
-                                Further details regarding this SaaS product analysis will be published here upon project completion. Check back soon for the full breakdown.
+                            <h4 class="text-xs font-bold text-brand-400 tracking-[0.4em] uppercase mb-6">Technical Overview</h4>
+                            <p class="text-base text-slate-300 font-light leading-loose mb-12">
+                                Coming Soon.
                             </p>
-                            <a href="#" class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-white border-b border-white hover:text-slate-300 hover:border-slate-300 pb-1 transition-colors">
-                                View on GitHub <i class="fas fa-arrow-right ml-3"></i>
-                            </a>
+                            <a href="https://github.com/Eyasin-terminal/2026-Project-Data_Cleanign_GameZone-Class_B" target="_blank" class="inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-white border-b-2 border-brand-500 pb-1 hover:text-brand-400 transition-colors">GitHub Repository <i class="fas fa-arrow-right ml-4"></i></a>
                         </div>
                     </div>
                 </div>
-
             </div>
             
-            <!-- Carousel Dots -->
-            <div class="flex justify-center gap-2 mt-6">
-                <div class="carousel-dot w-6 h-1 bg-slate-900 transition-all duration-300"></div>
-                <div class="carousel-dot w-2 h-1 bg-slate-300 transition-all duration-300"></div>
-                <div class="carousel-dot w-2 h-1 bg-slate-300 transition-all duration-300"></div>
+            <div class="flex justify-center gap-3 mt-10">
+                <div class="carousel-dot w-8 h-1 bg-brand-500 transition-all"></div>
+                <div class="carousel-dot w-2 h-1 bg-slate-700 transition-all"></div>
+                <div class="carousel-dot w-2 h-1 bg-slate-700 transition-all"></div>
             </div>
         </div>
     </section>
-
 <!-- Contact -->
 <section id="contact" class="py-24 lg:py-32 bg-white relative border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
