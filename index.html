@@ -767,12 +767,46 @@
     if (closeModalBtn) closeModalBtn.addEventListener('click', closeCertModal);
     if (modalBackdrop) modalBackdrop.addEventListener('click', closeCertModal);
 
-    // Navigation Toggle Logic
+    // Navigation Toggle Logic (UPGRADED)
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
-    if (btn) {
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
+    const line1 = document.querySelector('.menu-line-1');
+    const line2 = document.querySelector('.menu-line-2');
+    const line3 = document.querySelector('.menu-line-3');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    if (btn && menu) {
+        const toggleMenu = () => {
+            const isOpen = btn.classList.contains('active');
+            
+            if (!isOpen) {
+                // Open State: Morph to X and slide menu down
+                btn.classList.add('active');
+                line1.classList.replace('-translate-y-1.5', 'rotate-45');
+                line2.classList.add('opacity-0');
+                line3.classList.replace('translate-y-1.5', '-rotate-45');
+                
+                menu.classList.remove('opacity-0', '-translate-y-4', 'pointer-events-none');
+                menu.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+            } else {
+                // Close State: Morph back to hamburger and slide menu up
+                btn.classList.remove('active');
+                line1.classList.replace('rotate-45', '-translate-y-1.5');
+                line2.classList.remove('opacity-0');
+                line3.classList.replace('-rotate-45', 'translate-y-1.5');
+                
+                menu.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+                menu.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
+            }
+        };
+
+        btn.addEventListener('click', toggleMenu);
+
+        // Auto-close menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if(btn.classList.contains('active')) toggleMenu();
+            });
         });
     }
 
