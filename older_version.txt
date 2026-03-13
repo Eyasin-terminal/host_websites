@@ -86,6 +86,22 @@
         #go-to-top {
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
+        /* Logo Grayscale to Color Transition for Credentials Grid */
+        .brand-logo {
+            filter: grayscale(100%);
+            transition: all 0.5s ease;
+            opacity: 0.6;
+        }
+        .group:hover .brand-logo {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        @keyframes pulse-subtle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .verify-pulse { animation: pulse-subtle 3s infinite ease-in-out; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-200 selection:text-brand-900">
@@ -237,115 +253,96 @@
         </div>
     </section>
 
-<!-- SECTION: Certified By Marquee (Interactive) -->
-    <section class="py-16 bg-white border-t border-b border-slate-100 overflow-hidden relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-            <h2 class="text-[10px] font-bold tracking-[0.3em] text-slate-400 uppercase text-center">Certified & Recognized By</h2>
-        </div>
-        
-        <div class="relative flex overflow-x-hidden group">
-            <div id="marquee-track" class="marquee-content animate-marquee space-x-16 md:space-x-32 items-center py-4 group-hover:[animation-play-state:paused]">
-                
-                <!-- Binance -->
-                <div data-cert="binance" class="marquee-item grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                    <svg class="h-8 md:h-10 w-auto" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16.624 13.9202l-4.624 4.624-4.624-4.624 1.704-1.704 2.92 2.92 2.92-2.92 1.704 1.704zm0-3.8404l-1.704-1.704-2.92 2.92-2.92-2.92-1.704 1.704 4.624 4.624 4.624-4.624zm3.8404 1.9202l-1.9202-1.9202-1.9202 1.9202 1.9202 1.9202 1.9202-1.9202zm-16.9288 0l-1.9202-1.9202-1.9202 1.9202 1.9202 1.9202 1.9202-1.9202zm8.4644-8.4644l-4.624 4.624 1.704 1.704 2.92-2.92 2.92 2.92 1.704-1.704-4.624-4.624zm0 16.9288l-4.624-4.624 1.704-1.704 2.92 2.92 2.92-2.92 1.704 1.704-4.624 4.624z" fill="#F3BA2F"/>
-                    </svg>
-                    <span class="ml-3 font-bold text-xl tracking-tight text-slate-900 font-sans">Binance</span>
+    <!-- NEW Credentials Section (Replaces Marquee) -->
+    <section id="credentials" class="py-24 bg-slate-50 border-y border-slate-200 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
+                <div class="max-w-xl">
+                    <h2 class="text-[10px] font-bold tracking-[0.3em] text-slate-400 uppercase mb-4">Validation</h2>
+                    <h3 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 leading-tight">Professional Credentials.</h3>
                 </div>
-
-                <!-- Google -->
-                <div data-cert="google" class="marquee-item grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                    <svg class="h-7 md:h-9 w-auto" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 12-4.53z" fill="#EA4335"/>
-                    </svg>
-                    <span class="ml-3 font-medium text-xl tracking-tight text-slate-600 font-sans">Google</span>
+                <div class="mt-6 md:mt-0 hidden md:block">
+                    <p class="text-slate-500 text-sm font-light max-w-xs leading-relaxed">Validated expertise from global industry leaders.</p>
                 </div>
+            </div>
 
-                <!-- Tableau -->
-                <div data-cert="tableau" class="marquee-item grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                    <svg class="h-8 md:h-10 w-auto" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M28.5 2V12.5M18 12.5V18H12.5M12.5 28.5H2M12.5 39V44.5H18M28.5 55V44.5M39 44.5V39H44.5M44.5 28.5H55M44.5 18V12.5H39" stroke="#E8762D" stroke-width="3" stroke-linecap="round"/>
-                        <circle cx="30" cy="30" r="5" fill="#E8762D"/>
-                    </svg>
-                    <span class="ml-2 font-bold text-xl tracking-tighter text-slate-900 font-sans">#tableau</span>
-                </div>
-
-                <!-- IBM -->
-                <div data-cert="ibm" class="marquee-item grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                    <div class="flex flex-col leading-none">
-                        <span class="text-3xl md:text-4xl font-black tracking-tighter text-sky-600 border-b-4 border-sky-600">IBM</span>
+            <div id="cert-container" class="flex md:grid overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:grid-cols-2 lg:grid-cols-3 gap-6 pb-6 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide items-stretch">
+                <!-- Cert 1: Binance -->
+                <div onclick="openCertModal('binance')" class="flex-shrink-0 w-[85vw] sm:w-[280px] md:w-auto snap-center group relative bg-white border border-slate-200 p-8 cursor-pointer transition-all duration-500 hover:border-slate-900 hover:shadow-xl flex flex-col">
+                    <div class="flex justify-between items-start mb-10">
+                        <div class="h-10 w-auto flex items-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Binance_Logo.svg" alt="Binance" class="brand-logo h-8 w-auto">
+                        </div>
+                        <span class="flex items-center gap-1 text-[8px] font-bold text-emerald-500 uppercase tracking-widest bg-emerald-50 px-2 py-1 verify-pulse"><i class="fas fa-check-circle"></i> Verified</span>
                     </div>
+                    <h4 class="text-lg font-serif font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Blockchain Fundamentals</h4>
+                    <p class="text-[10px] text-slate-400 uppercase tracking-[0.2em]">Binance Certified</p>
                 </div>
 
-                <!-- Cisco -->
-                <div data-cert="cisco" class="marquee-item grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                    <svg class="h-8 md:h-10 w-auto text-blue-500" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M3 13h1v4H3v-4zm2-3h1v7H5v-7zm2 2h1v5H7v-5zm2-4h1v9H9V8zm2 2h1v7h-1v-7zm2-6h1v13h-1V4zm2 4h1v9h-1V8zm2 2h1v7h-1v-7zm2 2h1v5h-1v-5z"/>
-                    </svg>
-                    <span class="ml-2 font-bold text-xl tracking-tighter text-slate-900">CISCO</span>
-                </div>
-
-                <!-- Coursera -->
-                <div data-cert="coursera" class="marquee-item grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                    <span class="text-2xl md:text-3xl font-bold text-blue-700 font-sans italic tracking-tighter">coursera</span>
-                </div>
-                
-                <!-- DUPLICATES FOR LOOPING (Keep these for seamless motion) -->
-                <!-- Binance -->
-                <div data-cert="binance" class="marquee-item grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                    <svg class="h-8 md:h-10 w-auto" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16.624 13.9202l-4.624 4.624-4.624-4.624 1.704-1.704 2.92 2.92 2.92-2.92 1.704 1.704zm0-3.8404l-1.704-1.704-2.92 2.92-2.92-2.92-1.704 1.704 4.624 4.624 4.624-4.624zm3.8404 1.9202l-1.9202-1.9202-1.9202 1.9202 1.9202 1.9202 1.9202-1.9202zm-16.9288 0l-1.9202-1.9202-1.9202 1.9202 1.9202 1.9202 1.9202-1.9202zm8.4644-8.4644l-4.624 4.624 1.704 1.704 2.92-2.92 2.92 2.92 1.704-1.704-4.624-4.624zm0 16.9288l-4.624-4.624 1.704-1.704 2.92 2.92 2.92-2.92 1.704 1.704-4.624 4.624z" fill="#F3BA2F"/>
-                    </svg>
-                    <span class="ml-3 font-bold text-xl tracking-tight text-slate-900 font-sans">Binance</span>
-                </div>
-
-                <!-- Google -->
-                <div data-cert="google" class="marquee-item grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                    <svg class="h-7 md:h-9 w-auto" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 12-4.53z" fill="#EA4335"/>
-                    </svg>
-                    <span class="ml-3 font-medium text-xl tracking-tight text-slate-600 font-sans">Google </span>
-                </div>
-
-                <!-- Tableau -->
-                <div data-cert="tableau" class="marquee-item grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                    <svg class="h-8 md:h-10 w-auto" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M28.5 2V12.5M18 12.5V18H12.5M12.5 28.5H2M12.5 39V44.5H18M28.5 55V44.5M39 44.5V39H44.5M44.5 28.5H55M44.5 18V12.5H39" stroke="#E8762D" stroke-width="3" stroke-linecap="round"/>
-                        <circle cx="30" cy="30" r="5" fill="#E8762D"/>
-                    </svg>
-                    <span class="ml-2 font-bold text-xl tracking-tighter text-slate-900 font-sans">#tableau</span>
-                </div>
-
-                <!-- IBM -->
-                <div data-cert="ibm" class="marquee-item grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                    <div class="flex flex-col leading-none">
-                        <span class="text-3xl md:text-4xl font-black tracking-tighter text-sky-600 border-b-4 border-sky-600">IBM</span>
+                <!-- Cert 2: Google -->
+                <div onclick="openCertModal('google')" class="flex-shrink-0 w-[85vw] sm:w-[280px] md:w-auto snap-center group relative bg-white border border-slate-200 p-8 cursor-pointer transition-all duration-500 hover:border-slate-900 hover:shadow-xl flex flex-col">
+                    <div class="flex justify-between items-start mb-10">
+                        <div class="h-10 w-auto flex items-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="brand-logo h-8 w-auto">
+                        </div>
+                        <span class="flex items-center gap-1 text-[8px] font-bold text-emerald-500 uppercase tracking-widest bg-emerald-50 px-2 py-1 verify-pulse"><i class="fas fa-check-circle"></i> Verified</span>
                     </div>
+                    <h4 class="text-lg font-serif font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Google Data Analytics</h4>
+                    <p class="text-[10px] text-slate-400 uppercase tracking-[0.2em]">Advanced Certification</p>
                 </div>
 
-                <!-- Cisco -->
-                <div data-cert="cisco" class="marquee-item grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                    <svg class="h-8 md:h-10 w-auto text-blue-500" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M3 13h1v4H3v-4zm2-3h1v7H5v-7zm2 2h1v5H7v-5zm2-4h1v9H9V8zm2 2h1v7h-1v-7zm2-6h1v13h-1V4zm2 4h1v9h-1V8zm2 2h1v7h-1v-7zm2 2h1v5h-1v-5z"/>
-                    </svg>
-                    <span class="ml-2 font-bold text-xl tracking-tighter text-slate-900">CISCO</span>
+                <!-- Cert 3: Tableau -->
+                <div onclick="openCertModal('tableau')" class="flex-shrink-0 w-[85vw] sm:w-[280px] md:w-auto snap-center group relative bg-white border border-slate-200 p-8 cursor-pointer transition-all duration-500 hover:border-slate-900 hover:shadow-xl flex flex-col">
+                    <div class="flex justify-between items-start mb-10">
+                        <div class="h-10 w-auto flex items-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png" alt="Tableau" class="brand-logo h-7 w-auto">
+                        </div>
+                        <span class="flex items-center gap-1 text-[8px] font-bold text-emerald-500 uppercase tracking-widest bg-emerald-50 px-2 py-1 verify-pulse"><i class="fas fa-check-circle"></i> Verified</span>
+                    </div>
+                    <h4 class="text-lg font-serif font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Tableau Specialist</h4>
+                    <p class="text-[10px] text-slate-400 uppercase tracking-[0.2em]">Professional Validation</p>
                 </div>
 
-                <!-- Coursera -->
-                <div data-cert="coursera" class="marquee-item grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                    <span class="text-2xl md:text-3xl font-bold text-blue-700 font-sans italic tracking-tighter">coursera</span>
+                <!-- Cert 4: IBM -->
+                <div onclick="openCertModal('ibm')" class="flex-shrink-0 w-[85vw] sm:w-[280px] md:w-auto snap-center group relative bg-white border border-slate-200 p-8 cursor-pointer transition-all duration-500 hover:border-slate-900 hover:shadow-xl flex flex-col">
+                    <div class="flex justify-between items-start mb-10">
+                        <div class="h-10 w-auto flex items-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" class="brand-logo h-6 w-auto">
+                        </div>
+                        <span class="flex items-center gap-1 text-[8px] font-bold text-emerald-500 uppercase tracking-widest bg-emerald-50 px-2 py-1 verify-pulse"><i class="fas fa-check-circle"></i> Verified</span>
+                    </div>
+                    <h4 class="text-lg font-serif font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Statistics with Python</h4>
+                    <p class="text-[10px] text-slate-400 uppercase tracking-[0.2em]">IBM Specialization</p>
+                </div>
+
+                <!-- Cert 5: Cisco -->
+                <div onclick="openCertModal('cisco')" class="flex-shrink-0 w-[85vw] sm:w-[280px] md:w-auto snap-center group relative bg-white border border-slate-200 p-8 cursor-pointer transition-all duration-500 hover:border-slate-900 hover:shadow-xl flex flex-col">
+                    <div class="flex justify-between items-start mb-10">
+                        <div class="h-10 w-auto flex items-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg" alt="Cisco" class="brand-logo h-10 w-auto">
+                        </div>
+                        <span class="flex items-center gap-1 text-[8px] font-bold text-emerald-500 uppercase tracking-widest bg-emerald-50 px-2 py-1 verify-pulse"><i class="fas fa-check-circle"></i> Verified</span>
+                    </div>
+                    <h4 class="text-lg font-serif font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Networking Essentials</h4>
+                    <p class="text-[10px] text-slate-400 uppercase tracking-[0.2em]">Infrastructure Logic</p>
+                </div>
+
+                <!-- Cert 6: Coursera -->
+                <div onclick="openCertModal('coursera')" class="flex-shrink-0 w-[85vw] sm:w-[280px] md:w-auto snap-center group relative bg-white border border-slate-200 p-8 cursor-pointer transition-all duration-500 hover:border-slate-900 hover:shadow-xl flex flex-col">
+                    <div class="flex justify-between items-start mb-10">
+                        <div class="h-10 w-auto flex items-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Coursera-logo_dot_com.svg" alt="Coursera" class="brand-logo h-5 w-auto">
+                        </div>
+                        <span class="flex items-center gap-1 text-[8px] font-bold text-emerald-500 uppercase tracking-widest bg-emerald-50 px-2 py-1 verify-pulse"><i class="fas fa-check-circle"></i> Verified</span>
+                    </div>
+                    <h4 class="text-lg font-serif font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Financial Markets</h4>
+                    <p class="text-[10px] text-slate-400 uppercase tracking-[0.2em]">Macro Specialization</p>
                 </div>
             </div>
             
-            <div class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-            <div class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+            <div class="md:hidden flex justify-center mt-6 text-slate-400 text-[10px] uppercase tracking-[0.2em]">
+                <i class="fas fa-arrows-alt-h animate-pulse mr-2"></i> Swipe to explore
+            </div>
         </div>
     </section>
 
@@ -428,7 +425,7 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- NEW Projects Section -->
     <section id="projects" class="py-24 lg:py-32 bg-slate-900 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 border-b border-white/10 pb-8">
@@ -468,7 +465,7 @@
                         </div>
                         <button onclick="toggleCard(this)" class="mt-auto group/btn flex items-center justify-between w-full text-[10px] font-bold uppercase tracking-[0.2em] cursor-pointer">
                             <span class="group-hover/btn:text-brand-400 transition-colors">View Methodology</span>
-                            <div class="h-10 w-10 rounded-full border border-white/20 flex items-center justify-center group-hover/btn:bg-white group-hover/btn:text-slate-900 transition-all">
+                            <div class="h-10 w-10 rounded-full border border-white/10 flex items-center justify-center group-hover/btn:bg-white group-hover/btn:text-slate-900 transition-all">
                                 <i class="fas fa-chevron-up text-[10px]"></i>
                             </div>
                         </button>
@@ -506,7 +503,7 @@
                         </div>
                         <button onclick="toggleCard(this)" class="mt-auto group/btn flex items-center justify-between w-full text-[10px] font-bold uppercase tracking-[0.2em] cursor-pointer">
                             <span class="group-hover/btn:text-brand-400 transition-colors">View Preview</span>
-                            <div class="h-10 w-10 rounded-full border border-white/20 flex items-center justify-center group-hover/btn:bg-white group-hover/btn:text-slate-900 transition-all">
+                            <div class="h-10 w-10 rounded-full border border-white/10 flex items-center justify-center group-hover/btn:bg-white group-hover/btn:text-slate-900 transition-all">
                                 <i class="fas fa-chevron-up text-[10px]"></i>
                             </div>
                         </button>
@@ -543,7 +540,7 @@
                         </div>
                         <button onclick="toggleCard(this)" class="mt-auto group/btn flex items-center justify-between w-full text-[10px] font-bold uppercase tracking-[0.2em] cursor-pointer">
                             <span class="group-hover/btn:text-brand-400 transition-colors">View Preview</span>
-                            <div class="h-10 w-10 rounded-full border border-white/20 flex items-center justify-center group-hover/btn:bg-white group-hover/btn:text-slate-900 transition-all">
+                            <div class="h-10 w-10 rounded-full border border-white/10 flex items-center justify-center group-hover/btn:bg-white group-hover/btn:text-slate-900 transition-all">
                                 <i class="fas fa-chevron-up text-[10px]"></i>
                             </div>
                         </button>
@@ -562,13 +559,14 @@
                 </div>
             </div>
             
-            <div class="flex justify-center gap-3 mt-10">
-                <div class="carousel-dot w-8 h-1 bg-brand-500 transition-all"></div>
-                <div class="carousel-dot w-2 h-1 bg-slate-700 transition-all"></div>
-                <div class="carousel-dot w-2 h-1 bg-slate-700 transition-all"></div>
+            <div class="flex justify-center gap-3 mt-6">
+                <div class="carousel-dot w-6 h-1 bg-brand-500 transition-all duration-300"></div>
+                <div class="carousel-dot w-2 h-1 bg-slate-700 transition-all duration-300"></div>
+                <div class="carousel-dot w-2 h-1 bg-slate-700 transition-all duration-300"></div>
             </div>
         </div>
     </section>
+
 <!-- Contact -->
 <section id="contact" class="py-24 lg:py-32 bg-white relative border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -737,7 +735,8 @@
     const modalBackdrop = document.getElementById('modal-backdrop');
     const closeModalBtn = document.getElementById('close-modal');
 
-    function openCertModal(certId) {
+    // Exposed to window so inline onclick handlers in the grid work
+    window.openCertModal = function(certId) {
         const data = certifications[certId];
         if (!data) return;
 
@@ -761,7 +760,7 @@
             modalContainer.classList.replace('opacity-0', 'opacity-100');
         }, 10);
         document.body.style.overflow = 'hidden';
-    }
+    };
 
     function closeCertModal() {
         modalBackdrop.classList.replace('opacity-100', 'opacity-0');
@@ -805,41 +804,59 @@
     
     // Core Initializer
     document.addEventListener('DOMContentLoaded', () => {
-        // 1. Marquee Click Listener
-        const track = document.getElementById('marquee-track');
-        if (track) {
-            track.addEventListener('click', (e) => {
-                const item = e.target.closest('.marquee-item');
-                if (item) {
-                    const certId = item.getAttribute('data-cert');
-                    openCertModal(certId);
-                }
-            });
-        }
 
-        // 2. Carousel Logic
-        const container = document.getElementById('carousel-container');
-        if (container) {
-            const cards = container.querySelectorAll('.project-card');
-            const dots = document.querySelectorAll('.carousel-dot');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const index = Array.from(cards).indexOf(entry.target);
-                        dots.forEach((dot, i) => {
-                            if (i === index) {
-                                dot.classList.remove('bg-slate-300', 'w-2');
-                                dot.classList.add('bg-slate-900', 'w-6');
-                            } else {
-                                dot.classList.add('bg-slate-300', 'w-2');
-                                dot.classList.remove('bg-slate-900', 'w-6');
+        // 2. Carousel Logic (Applied to both certificates on mobile and projects)
+        const setupCarousel = (containerId, dotClass) => {
+            const container = document.getElementById(containerId);
+            const dots = document.querySelectorAll(dotClass);
+            if (container && dots.length > 0) {
+                // Determine which children to observe
+                let observeTargets;
+                if(containerId === 'carousel-container') {
+                    observeTargets = container.querySelectorAll('.project-card');
+                } else if(containerId === 'cert-container') {
+                    // For certificates, only observe if we are on mobile (where horizontal scrolling happens)
+                    if (window.innerWidth >= 768) return; 
+                    observeTargets = Array.from(container.children);
+                }
+
+                if(!observeTargets || observeTargets.length === 0) return;
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const index = Array.from(observeTargets).indexOf(entry.target);
+                            // Safety check to ensure we don't out-of-bounds error on dots
+                            if(index >= 0 && index < dots.length) {
+                                dots.forEach((dot, i) => {
+                                    if (i === index) {
+                                        // Specific active colors based on section
+                                        if(containerId === 'carousel-container') {
+                                            dot.classList.remove('bg-slate-700', 'w-2');
+                                            dot.classList.add('bg-brand-500', 'w-8'); // Using the brand color for projects
+                                        } else {
+                                            dot.classList.remove('bg-slate-300', 'w-2');
+                                            dot.classList.add('bg-slate-900', 'w-6');
+                                        }
+                                    } else {
+                                        if(containerId === 'carousel-container') {
+                                            dot.classList.add('bg-slate-700', 'w-2');
+                                            dot.classList.remove('bg-brand-500', 'w-8');
+                                        } else {
+                                            dot.classList.add('bg-slate-300', 'w-2');
+                                            dot.classList.remove('bg-slate-900', 'w-6');
+                                        }
+                                    }
+                                });
                             }
-                        });
-                    }
-                });
-            }, { root: container, threshold: 0.6 });
-            cards.forEach(card => observer.observe(card));
-        }
+                        }
+                    });
+                }, { root: container, threshold: 0.6 });
+                observeTargets.forEach(target => observer.observe(target));
+            }
+        };
+
+        setupCarousel('carousel-container', '.carousel-dot');
 
         // 3. Contact Form Logic
         const contactForm = document.getElementById("contact-form");
@@ -895,7 +912,7 @@
         }
     });
 
-    // Global Styles Injection
+    // Global Styles Injection (Preserved from original)
     const styleSheet = document.createElement("style");
     styleSheet.innerText = `
         @keyframes fadeIn {
