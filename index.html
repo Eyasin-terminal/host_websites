@@ -35,17 +35,19 @@
         /* Desktop Version */
         @media (min-width: 768px) {
             .hero {
-                /* Transforms into a 16:9 banner shape */
                 height: auto;
-                aspect-ratio: 16 / 9;
                 
-                /* Continues to work as contain within the 16:9 banner */
-                background-size: contain; 
+                /* UPDATED: Match the exact dimensions of your image */
+                aspect-ratio: 2400 / 1786;
+                
+                /* Now 'cover' will fit perfectly with zero cropping */
+                background-size: cover; 
                 
                 /* Desktop Background */
                 background-image: url('assets/1779516068636.png');
             }
         }
+        
 
         /* --- Top Center Navigation --- */
         .nav-container {
