@@ -12,50 +12,23 @@
             box-sizing: border-box;
         }
 
+        html {
+            /* Enables smooth gliding when clicking menu links */
+            scroll-behavior: smooth; 
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: #f9f9f9;
         }
 
-        /* --- Hero Section & Responsive Backgrounds --- */
-        .hero {
-            position: relative;
-            width: 100%;
-            
-            /* Phone version default: full viewport height */
-            height: 100vh; 
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            
-            /* Default to Mobile Background */
-            background-image: url('assets/Untitled design (1).png'); 
-        }
-
-        /* Desktop Version */
-        @media (min-width: 768px) {
-            .hero {
-                height: auto;
-                
-                /* UPDATED: Match the exact dimensions of your image */
-                aspect-ratio: 2400 / 1786;
-                
-                /* Now 'cover' will fit perfectly with zero cropping */
-                background-size: cover; 
-                
-                /* Desktop Background */
-                background-image: url('assets/1779516068636.png');
-            }
-        }
-        
-
-        /* --- Top Center Navigation --- */
+        /* --- Navigation (Fixed for Single Page) --- */
         .nav-container {
-            position: absolute;
+            position: fixed; /* Keeps menu on screen while scrolling */
             top: 24px;
             left: 50%;
             transform: translateX(-50%);
-            z-index: 50;
+            z-index: 999; /* Ensures it stays above all backgrounds */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -72,7 +45,7 @@
             border: none;
             cursor: pointer;
             padding: 0;
-            z-index: 51;
+            z-index: 1000;
         }
 
         .hamburger span {
@@ -149,58 +122,119 @@
             background-color: rgba(0, 0, 0, 0.04);
             color: #000;
         }
+
+        /* --- SECTION 1: Hero --- */
+        #home {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Phone default */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('assets/1779516068636.png'); 
+        }
+
+        @media (min-width: 768px) {
+            #home {
+                height: auto;
+                aspect-ratio: 2400 / 1786; /* Matches image perfectly */
+                background-size: cover; 
+                background-image: url('assets/1779516068636.png');
+            }
+        }
+
+        /* --- SECTION 2: About --- */
+        #about {
+            position: relative;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1920 / 2400; /* Mobile ratio */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('assets/nice to meet you!(1).png'); 
+        }
+
+        @media (min-width: 768px) {
+            #about {
+                aspect-ratio: 2400 / 1786; /* Desktop ratio */
+                background-image: url('assets/nice to meet you!.png');
+            }
+        }
     </style>
 </head>
 <body>
 
-    <section class="hero">
-        <!-- Top Center Menu Container -->
-        <div class="nav-container">
-            <!-- Toggle Button -->
-            <button class="hamburger" id="menuToggle" aria-label="Toggle dropdown menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            
-            <!-- Dropdown Options -->
-            <nav class="dropdown-menu" id="dropdownMenu">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#project">Project</a></li>
-                    <li><a href="#credentials">Credentials</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </section>
+    <!-- Fixed Global Navigation -->
+    <div class="nav-container">
+        <button class="hamburger" id="menuToggle" aria-label="Toggle dropdown menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <!-- Dropdown Options using ID anchors for single-page routing -->
+        <nav class="dropdown-menu" id="dropdownMenu">
+            <ul>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#work" class="nav-link">Work</a></li>
+                <li><a href="#project" class="nav-link">Project</a></li>
+                <li><a href="#credentials" class="nav-link">Credentials</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Page Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home">
+            <!-- Hero content goes here -->
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <!-- About content goes here -->
+        </section>
+
+        <!-- Future Sections (Work, Project, etc.) will go here with matching IDs -->
+    </main>
 
     <script>
-        // --- Navigation Logic ---
+        // --- Single Page Navigation Logic ---
         document.addEventListener('DOMContentLoaded', () => {
             const menuToggle = document.getElementById('menuToggle');
             const dropdownMenu = document.getElementById('dropdownMenu');
+            const navLinks = document.querySelectorAll('.nav-link');
 
+            // 1. Toggle menu open/close
             menuToggle.addEventListener('click', (e) => {
-                // Prevent click from immediately bubbling up to the document
                 e.stopPropagation(); 
-                
-                // Toggle active classes on both the icon and the menu
                 menuToggle.classList.toggle('active');
                 dropdownMenu.classList.toggle('active');
             });
 
-            // Close dropdown when clicking anywhere outside of it
+            // 2. Close dropdown when clicking outside
             document.addEventListener('click', (event) => {
                 if (!dropdownMenu.contains(event.target) && !menuToggle.contains(event.target)) {
                     menuToggle.classList.remove('active');
                     dropdownMenu.classList.remove('active');
                 }
             });
+
+            // 3. Close menu automatically when a link is clicked
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menuToggle.classList.remove('active');
+                    dropdownMenu.classList.remove('active');
+                });
+            });
         });
     </script>
 </body>
 </html>
+
+
+
