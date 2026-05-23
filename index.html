@@ -17,25 +17,46 @@
             background-color: #f9f9f9;
         }
 
-        /* --- Hero Section --- */
+        /* --- Hero Section & Responsive Backgrounds --- */
         .hero {
             position: relative;
             width: 100%;
-            height: 100vh; /* Full viewport height */
-            /* Updated Background Image Path */
-            background-image: url('assets/1779516068636.png');
+            
+            /* Phone version default: full viewport height */
+            height: 100vh; 
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            
+            /* Default to Mobile Background */
+            background-image: url('assets/Untitled design.png'); 
+        }
+
+        /* Desktop Version */
+        @media (min-width: 768px) {
+            .hero {
+                /* Transforms into a 16:9 banner shape */
+                height: auto;
+                aspect-ratio: 16 / 9;
+                
+                /* Continues to work as cover within the 16:9 banner */
+                background-size: cover; 
+                
+                /* Desktop Background */
+                background-image: url('assets/1779516068636.png');
+            }
         }
 
         /* --- Top Center Navigation --- */
         .nav-container {
             position: absolute;
-            top: 24px; /* Padding from the top edge */
+            top: 24px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         /* --- Hamburger Menu Icon --- */
@@ -49,19 +70,19 @@
             border: none;
             cursor: pointer;
             padding: 0;
+            z-index: 51;
         }
 
-        /* The 3 bars */
         .hamburger span {
             display: block;
             width: 100%;
             height: 2px;
-            background-color: #333; /* Dark minimalist gray */
+            background-color: #333; 
             border-radius: 2px;
             transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
         }
 
-        /* Collapse Animation (Transforms into an 'X' when active) */
+        /* Collapse Animation (Transforms to 'X') */
         .hamburger.active span:nth-child(1) {
             transform: translateY(9px) rotate(45deg);
         }
@@ -73,6 +94,59 @@
         .hamburger.active span:nth-child(3) {
             transform: translateY(-9px) rotate(-45deg);
         }
+
+        /* --- Minimalist Glassmorphism Dropdown Menu --- */
+        .dropdown-menu {
+            position: absolute;
+            top: 40px;
+            background: rgba(255, 255, 255, 0.7); 
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            padding: 1rem 0;
+            min-width: 200px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+            
+            /* Hidden state */
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-15px);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Active state */
+        .dropdown-menu.active {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu ul {
+            list-style: none;
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 24px;
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-transform: capitalize;
+            letter-spacing: 0.5px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: rgba(0, 0, 0, 0.04);
+            color: #000;
+        }
     </style>
 </head>
 <body>
@@ -80,27 +154,49 @@
     <section class="hero">
         <!-- Top Center Menu Container -->
         <div class="nav-container">
+            <!-- Toggle Button -->
             <button class="hamburger" id="menuToggle" aria-label="Toggle dropdown menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
+            
+            <!-- Dropdown Options -->
+            <nav class="dropdown-menu" id="dropdownMenu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#project">Project</a></li>
+                    <li><a href="#credentials">Credentials</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        
-        <!-- Future dropdown content can be placed here or triggered via JS -->
     </section>
 
     <script>
         // --- Navigation Logic ---
         document.addEventListener('DOMContentLoaded', () => {
             const menuToggle = document.getElementById('menuToggle');
+            const dropdownMenu = document.getElementById('dropdownMenu');
 
-            menuToggle.addEventListener('click', () => {
-                // Toggles the 'active' class to animate the 3-bar icon into an 'X'
-                menuToggle.classList.toggle('active');
+            menuToggle.addEventListener('click', (e) => {
+                // Prevent click from immediately bubbling up to the document
+                e.stopPropagation(); 
                 
-                // Logic to reveal/hide the dropdown menu will go here
-                console.log('Menu toggled. Dropdown logic pending.');
+                // Toggle active classes on both the icon and the menu
+                menuToggle.classList.toggle('active');
+                dropdownMenu.classList.toggle('active');
+            });
+
+            // Close dropdown when clicking anywhere outside of it
+            document.addEventListener('click', (event) => {
+                if (!dropdownMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                    menuToggle.classList.remove('active');
+                    dropdownMenu.classList.remove('active');
+                }
             });
         });
     </script>
